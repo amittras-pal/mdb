@@ -1,0 +1,64 @@
+@import "../../../resources/theme/variables";
+
+.sidebar {
+  flex: 1;
+  padding: 1.5rem 0rem;
+  border-right: 1px solid $light-blue;
+  overflow-y: auto;
+  &__section {
+    margin: 1.5rem 0rem 0.5rem 0rem;
+  }
+  &__heading {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    color: $grey;
+  }
+  &__nav {
+    list-style: none;
+    padding-left: 0rem;
+    &__button {
+      width: 100%;
+      padding: 0rem;
+      padding-left: 1rem;
+      border: none;
+      background-color: transparent;
+      color: $blue-grey;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      height: 2.5rem;
+      position: relative;
+      transition: color 0.2s ease-in-out;
+      margin-bottom: 1px;
+      &:hover,
+      &:focus {
+        color: $black;
+      }
+      &:focus {
+        outline: 1px dashed $black;
+      }
+      &.active {
+        color: $red;
+        &:after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 75%;
+          width: 6px;
+          background-color: $red;
+          border-radius: 6px 0px 0px 6px;
+        }
+      }
+      .icon-container {
+        width: 24px;
+        margin-right: 0.75rem;
+      }
+    }
+  }
+}
