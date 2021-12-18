@@ -24,7 +24,7 @@
     .close-sidebar {
       border-radius: 2rem;
       border: none;
-      background-color: $primary;
+      background-color: $danger;
       border-radius: 1.5rem 0rem 0rem 1.5rem;
       padding: 0.5rem;
     }
@@ -38,7 +38,7 @@
 }
 
 .sidebar {
-  height: calc(100vh - 8rem);
+  height: calc(100vh - 4rem);
   .sidebar-menu {
     padding-right: 1rem;
     overflow-y: auto;
@@ -57,7 +57,7 @@
       padding: 0 1rem;
       font-weight: 700;
       letter-spacing: 0.2rem;
-      color: $info;
+      color: $grey;
     }
     .sidebar__nav {
       list-style: none;
@@ -74,19 +74,19 @@
         background-color: transparent;
         text-decoration: none;
         font-weight: 500;
-        color: $blue-grey;
+        color: $danger;
         transition: color 0.2s ease-in-out;
         border-radius: 0rem 1.5rem 1.5rem 0rem;
 
         &:hover,
         &:focus {
-          color: $dark;
+          // color: $dark;
           background-color: $light;
           outline: none;
         }
         &.active {
           color: $light;
-          background-color: $primary;
+          background-color: $danger;
         }
         .icon-container {
           width: 24px;

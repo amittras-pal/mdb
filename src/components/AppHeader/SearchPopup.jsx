@@ -23,7 +23,7 @@ function SearchPopup({ onRequestClose }) {
     <div className="g-search">
       <div className="d-flex justify-content-between align-items-center heading mb-2">
         <p className="text-dark">Search movies, tv or people</p>
-        <button className="btn text-danger" onClick={() => onRequestClose()}>
+        <button className="btn text-dark" onClick={() => onRequestClose()}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
       </div>
@@ -34,11 +34,11 @@ function SearchPopup({ onRequestClose }) {
               type="text"
               name="query"
               id="gSearch"
-              className="form-control form-control-sm"
+              className="form-control form-control-sm border-danger"
               placeholder="Search"
             />
             <button
-              className="btn btn-secondary btn-sm "
+              className="btn btn-outline-danger btn-sm "
               type="submit"
               disabled={!searchForm.isValid}>
               <FontAwesomeIcon icon={faSearch} />
@@ -53,7 +53,7 @@ function SearchPopup({ onRequestClose }) {
               value={searchCategories.MOVIE}
             />
             <label
-              className="btn btn-sm btn-outline-secondary"
+              className="btn btn-sm btn-outline-danger fw-bold"
               htmlFor={searchCategories.MOVIE}>
               Movie
             </label>
@@ -65,7 +65,7 @@ function SearchPopup({ onRequestClose }) {
               value={searchCategories.TV}
             />
             <label
-              className="btn btn-sm btn-outline-secondary"
+              className="btn btn-sm btn-outline-danger fw-bold"
               htmlFor={searchCategories.TV}>
               TV Shows
             </label>
@@ -77,7 +77,7 @@ function SearchPopup({ onRequestClose }) {
               value={searchCategories.PERSON}
             />
             <label
-              className="btn btn-sm btn-outline-secondary"
+              className="btn btn-sm btn-outline-danger fw-bold"
               htmlFor={searchCategories.PERSON}>
               Person
             </label>

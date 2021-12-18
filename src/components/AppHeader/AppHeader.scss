@@ -29,5 +29,8 @@
         margin-bottom: 0;
       }
     }
+    .btn-check:checked + label {
+      color: $light !important;
+    }
   }
 }
