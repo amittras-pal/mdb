@@ -1,18 +1,19 @@
 @import "./variables";
 @import "./vendors";
-
-//@each $breakpoint in map-keys($grid-breakpoints) {
-//   @include media-breakpoint-up($breakpoint) {
-//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-//     // Common values
-//     @each $position in $positions {
-//       .position#{$infix}-#{$position} { position: $position !important; }
-//     }
-//   }
-// }
 html,
 body {
   font-family: "Montserrat", sans-serif;
+}
+
+.blocked-view {
+  filter: blur(10px) !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  user-select: none !important;
+}
+
+.block-scroll {
+  overflow: hidden !important;
 }
 
 body {
@@ -20,12 +21,19 @@ body {
   .App {
     height: 100vh;
     width: 100vw;
+    .body {
+      transition: all 0.2s ease-in-out;
+    }
     .router-outlet {
+      transition: all 0.2s ease-in-out;
       padding: 0;
       height: calc(100vh - 64px);
       overflow-y: auto;
     }
   }
+}
+.pointer {
+  cursor: pointer;
 }
 
 .form-control,

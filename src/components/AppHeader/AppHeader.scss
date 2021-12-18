@@ -5,8 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 1.2rem;
-  box-shadow: 0px 3px 6px -1px rgba($color: $dark, $alpha: 0.2);
+  padding: 0px 0.75rem;
+  box-shadow: $bottom-shadow;
   .title {
     display: flex;
     align-items: center;

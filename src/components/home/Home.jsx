@@ -3,7 +3,7 @@ import "./Home.scss";
 
 function Home() {
   return (
-    <div className="row m-0">
+    <div className="home row m-0">
       <h3>Home Page</h3>
       <div className="mt-5 pt5">
         <h5>

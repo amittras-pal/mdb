@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <AppHeader />
         <BrowserRouter>
-          <div className="row m-0 body">
+          <div className="row m-0 body" id="appBody">
             <div className="col-md-2 col-lg-2 px-0 sidebar-container">
               <Sidebar />
             </div>

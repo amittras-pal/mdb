@@ -1,6 +1,6 @@
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { menu } from "../../constants/menuItems";
@@ -12,21 +12,23 @@ function Sidebar() {
   const { open: sidebarOpen } = useSelector((state) => state);
   const menuRef = useRef();
 
+  const closeSidebar = useCallback(() => {
+    dispatch(toggleSidebar());
+    document.getElementById("content").classList.remove("block-scroll");
+  }, [dispatch]);
+
   useEffect(() => {
     const handleClick = (event) => {
-      if (!menuRef.current?.contains(event.target)) dispatch(toggleSidebar());
+      if (!menuRef.current?.contains(event.target)) closeSidebar();
     };
     if (sidebarOpen) document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
-  }, [sidebarOpen, dispatch]);
+  }, [sidebarOpen, dispatch, closeSidebar]);
 
   return (
     <nav className={sidebarOpen ? "sidebar active" : "sidebar"} ref={menuRef}>
       <div className="d-flex w-100 justify-content-end toggle-container align-items-end d-md-none">
-        <button
-          className="close-sidebar d-md-none"
-          onClick={() => dispatch(toggleSidebar())}
-        >
+        <button className="close-sidebar d-md-none" onClick={closeSidebar}>
           <FontAwesomeIcon icon={faChevronLeft} className="text-light" />
         </button>
       </div>
@@ -41,8 +43,7 @@ function Sidebar() {
                   to={item.path}
                   className="sidebar__nav__button"
                   activeclassname="active"
-                  onClick={() => dispatch(toggleSidebar())}
-                >
+                  onClick={closeSidebar}>
                   <span className="icon-container">
                     <FontAwesomeIcon icon={item.icon} />
                   </span>

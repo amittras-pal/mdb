@@ -2,8 +2,8 @@
 
 @media (max-width: 767.98px) {
   .sidebar {
-    background-color: $white;
     position: fixed;
+    background-color: $white;
     top: 0;
     left: -100%;
     width: 70vw;
@@ -11,6 +11,7 @@
     min-width: 250px;
     box-shadow: 10px 0px 20px -3px rgba($color: $dark, $alpha: 0.2);
     transition: left 0.5s ease-in-out;
+    z-index: 3;
     &.active {
       left: 0%;
     }
@@ -37,7 +38,7 @@
 }
 
 .sidebar {
-  height: calc(100vh - 64px);
+  height: calc(100vh - 8rem);
   .sidebar-menu {
     padding-right: 1rem;
     overflow-y: auto;
