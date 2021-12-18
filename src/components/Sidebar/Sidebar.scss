@@ -1,0 +1,97 @@
+@import "../../resources/theme/variables";
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70vw;
+    height: 100vh !important;
+    min-width: 250px;
+    box-shadow: 10px 0px 20px -3px rgba($color: $dark, $alpha: 0.2);
+    transition: left 0.5s ease-in-out;
+    &.active {
+      left: 0%;
+    }
+    .toggle-container {
+      height: 64px;
+    }
+    .sidebar-menu {
+      height: calc(100vh - 64px) !important;
+    }
+    .close-sidebar {
+      border-radius: 2rem;
+      border: none;
+      background-color: $primary;
+      border-radius: 1.5rem 0rem 0rem 1.5rem;
+      padding: 0.5rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar-menu {
+    padding-top: 1.5rem;
+  }
+}
+
+.sidebar {
+  height: calc(100vh - 64px);
+  .sidebar-menu {
+    padding-right: 1rem;
+    overflow-y: auto;
+    height: 100%;
+    .sidebar__header {
+      height: 64px;
+      padding: 0rem 1rem;
+    }
+    .sidebar__section {
+      margin-bottom: 1.2rem;
+    }
+    .sidebar__heading {
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 0.5rem;
+      padding: 0 1rem;
+      font-weight: 700;
+      letter-spacing: 0.2rem;
+      color: $info;
+    }
+    .sidebar__nav {
+      list-style: none;
+      padding-left: 0rem;
+      &__button {
+        position: relative;
+        height: 2.5rem;
+        margin-bottom: 1px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-left: 1rem;
+        border: none;
+        background-color: transparent;
+        text-decoration: none;
+        font-weight: 500;
+        color: $blue-grey;
+        transition: color 0.2s ease-in-out;
+        border-radius: 0rem 1.5rem 1.5rem 0rem;
+
+        &:hover,
+        &:focus {
+          color: $dark;
+          background-color: $light;
+          outline: none;
+        }
+        &.active {
+          color: $light;
+          background-color: $primary;
+        }
+        .icon-container {
+          width: 24px;
+          margin-right: 0.75rem;
+        }
+      }
+    }
+  }
+}
