@@ -1,15 +1,33 @@
 @import "../../resources/theme/variables";
-
-.header {
-  height: 64px;
-  display: flex;
+.app-header {
+  height: 4rem;
+  width: 100vw;
+  background-color: $white;
+  box-shadow: $bottom-shadow;
+  border-bottom: 1px solid $grey;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
   padding: 0px 0.75rem;
-  box-shadow: $bottom-shadow;
   .title {
     display: flex;
     align-items: center;
     height: 100%;
+  }
+}
+
+.g-search-theme {
+  border-radius: 0.75rem !important;
+  border: 1px solid $grey;
+  box-shadow: $bottom-shadow-lg !important;
+  .g-search {
+    .heading {
+      height: 40px;
+      font-size: 1rem;
+      p {
+        margin-right: 3rem;
+        margin-bottom: 0;
+      }
+    }
   }
 }
