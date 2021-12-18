@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import About from "../About/About";
-import Home from "../home/Home";
-import Login from "../Login/Login";
+import About from "../Pages/About/About";
+import Home from "../Pages/home/Home";
+import Login from "../Pages/Login/Login";
 
 function RouterOutlet() {
   return (
