@@ -2,8 +2,7 @@
 .app-header {
   height: 4rem;
   width: 100vw;
-  background-color: $white;
-  box-shadow: $bottom-shadow;
+  background-color: rgba($color: $white, $alpha: 0.4);
   border-bottom: 1px solid $grey;
   display: flex !important;
   justify-content: space-between;
@@ -29,8 +28,16 @@
         margin-bottom: 0;
       }
     }
+    input.form-control:focus {
+      box-shadow: none;
+      border-width: 2px;
+    }
+    label.btn-outline-danger:hover,
     .btn-check:checked + label {
       color: $light !important;
     }
+    // .btn-check:checked + label {
+    //   color: $light !important;
+    // }
   }
 }

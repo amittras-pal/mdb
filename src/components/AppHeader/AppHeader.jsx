@@ -44,7 +44,7 @@ function AppHeaderEnhance() {
             <FontAwesomeIcon icon={sidebarOpen ? faTimes : faBars} />
           </button>
         </div>
-        <h4 className="m-0 text-danger">Exxmon</h4>
+        <h4 className="m-0 text-danger fst-italic">IntelliShows</h4>
       </div>
       <button className="btn btn-danger text-light btn-sm" onClick={openSearch}>
         <FontAwesomeIcon icon={faSearch} className="me-2" />

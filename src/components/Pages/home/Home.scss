@@ -1,1 +1,25 @@
 @import "../../../resources/theme/variables";
+.home {
+  .hero-section {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      background-image: linear-gradient(to right, $black 15%, transparent 100%);
+    }
+    .content {
+      z-index: 1;
+    }
+  }
+}

@@ -6,7 +6,7 @@ body {
 }
 
 .blocked-view {
-  filter: blur(10px) !important;
+  filter: blur(5px) !important;
   pointer-events: none !important;
   overflow: hidden !important;
   user-select: none !important;
