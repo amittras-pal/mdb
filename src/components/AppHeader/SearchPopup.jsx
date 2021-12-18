@@ -1,6 +1,7 @@
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Field, FormikProvider, useFormik } from "formik";
+import { searchCategories } from "../../constants/globalSearch";
 import React from "react";
 import * as Yup from "yup";
 
@@ -8,7 +9,7 @@ function SearchPopup({ onRequestClose }) {
   const searchForm = useFormik({
     initialValues: {
       query: "",
-      searchType: "movies",
+      searchType: searchCategories.MOVIE,
     },
     validationSchema: Yup.object({
       query: Yup.string().required(),
@@ -48,34 +49,36 @@ function SearchPopup({ onRequestClose }) {
               type="radio"
               className="btn-check"
               name="searchType"
-              id="movies"
-              value="movies"
+              id={searchCategories.MOVIE}
+              value={searchCategories.MOVIE}
             />
             <label
               className="btn btn-sm btn-outline-secondary"
-              htmlFor="movies">
+              htmlFor={searchCategories.MOVIE}>
               Movie
             </label>
             <Field
               type="radio"
               className="btn-check"
               name="searchType"
-              id="tv"
-              value="tv"
+              id={searchCategories.TV}
+              value={searchCategories.TV}
             />
-            <label className="btn btn-sm btn-outline-secondary" htmlFor="tv">
+            <label
+              className="btn btn-sm btn-outline-secondary"
+              htmlFor={searchCategories.TV}>
               TV Shows
             </label>
             <Field
               type="radio"
               className="btn-check"
               name="searchType"
-              id="person"
-              value="person"
+              id={searchCategories.PERSON}
+              value={searchCategories.PERSON}
             />
             <label
               className="btn btn-sm btn-outline-secondary"
-              htmlFor="person">
+              htmlFor={searchCategories.PERSON}>
               Person
             </label>
           </div>
