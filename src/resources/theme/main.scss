@@ -28,33 +28,23 @@ body {
   }
 }
 
-.form-control {
+.form-control,
+.btn {
   border-radius: 3rem;
 }
 
-.btn:active,
-.btn:focus {
-  box-shadow: none;
-}
-
-/* width */
+/* scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   border-radius: 6px;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: $grey;
   border-radius: 6px;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: $grey;
 }
