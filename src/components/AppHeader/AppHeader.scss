@@ -17,7 +17,6 @@
 
 .g-search-theme {
   border-radius: 0.75rem !important;
-  border: 1px solid $grey;
   box-shadow: $bottom-shadow-lg !important;
   .g-search {
     .heading {
@@ -36,8 +35,5 @@
     .btn-check:checked + label {
       color: $light !important;
     }
-    // .btn-check:checked + label {
-    //   color: $light !important;
-    // }
   }
 }

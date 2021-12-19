@@ -50,10 +50,7 @@ function AppHeaderEnhance() {
           <span className="text-danger">.</span>
         </h4>
       </div>
-      <button
-        className="btn btn-danger text-light btn-sm"
-        onClick={openSearch}
-        disabled>
+      <button className="btn btn-danger text-light btn-sm" onClick={openSearch}>
         <FontAwesomeIcon icon={faSearch} className="me-2" />
         <span>Search</span>
       </button>
