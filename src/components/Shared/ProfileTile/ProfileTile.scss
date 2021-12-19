@@ -5,11 +5,22 @@
   overflow: hidden;
   position: relative;
   min-width: 185px;
+  &:hover {
+    img {
+      transform: scale(1.15);
+    }
+    .profile-info {
+      min-height: 30%;
+    }
+  }
   .profile-img {
     min-width: 185px;
     display: flex;
     justify-content: center;
     align-items: center;
+    img {
+      transition: transform 0.25s ease-in-out;
+    }
   }
   .profile-info {
     position: absolute;
@@ -18,7 +29,7 @@
     padding: 0.5rem;
     min-height: 25%;
     color: $white;
-    border-radius: 0.75rem;
     background-image: linear-gradient(to top, $dark, transparent);
+    transition: min-height 0.25s ease-in-out;
   }
 }

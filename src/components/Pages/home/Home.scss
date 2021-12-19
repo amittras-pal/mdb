@@ -31,6 +31,10 @@
     font-weight: 500;
     color: $secondary;
     text-decoration: none;
+    transition: color 0.15s ease-in-out;
+    &:hover {
+      color: $danger;
+    }
   }
   .home-section {
     display: flex;

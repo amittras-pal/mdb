@@ -22,7 +22,7 @@ function MediaTile({ type, data }) {
       <div className="content mt-2">
         <Link
           to={`/${type === "movie" ? "movies" : "tv"}/view/${data.id}`}
-          className="fw-bold text-secondary text-decoration-none">
+          className="fw-bold text-decoration-none label-link">
           {type === "movie" ? data.title : data.name}
         </Link>
         <p className="text-muted small mb-0">
