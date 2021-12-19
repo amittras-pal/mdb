@@ -8,7 +8,10 @@ function TrendingPeople() {
   const { data, isLoading } = usePopularPeople();
   return (
     <>
-      <p className="fw-bold text-danger">Happening Stars</p>
+      <div className="d-flex w-100 justify-content-between align-items-center mb-3">
+        <p className="fw-bold text-danger mb-0">Happening Stars</p>
+        <ExploreBtn linkTo="people" />
+      </div>
       {isLoading ? (
         <Loader />
       ) : (

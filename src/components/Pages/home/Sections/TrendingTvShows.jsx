@@ -8,7 +8,10 @@ function TrendingTvShows() {
   const { isLoading, data } = usePopularTvShows();
   return (
     <>
-      <p className="fw-bold text-danger">Trending TV Shows</p>
+      <div className="d-flex w-100 justify-content-between align-items-center mb-3">
+        <p className="fw-bold text-danger mb-0">Trending TV Shows</p>
+        <ExploreBtn linkTo="movies" />
+      </div>
       {isLoading ? (
         <Loader />
       ) : (

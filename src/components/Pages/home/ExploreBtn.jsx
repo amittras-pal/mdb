@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 function ExploreBtn({ linkTo }) {
   return (
     <Link to={linkTo} className="explore-more-btn">
-      View All
-      <FontAwesomeIcon icon={faChevronRight} className="ms-3" />
+      <span className="small">View All</span>
+      <FontAwesomeIcon icon={faChevronRight} className="mx-2" />
     </Link>
   );
 }

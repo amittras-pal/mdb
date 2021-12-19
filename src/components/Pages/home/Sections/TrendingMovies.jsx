@@ -8,7 +8,10 @@ function TrendingMovies() {
   const { isLoading, data } = usePopularMovies();
   return (
     <>
-      <p className="fw-bold text-danger">Trending Movies</p>
+      <div className="d-flex w-100 justify-content-between align-items-center mb-3">
+        <p className="fw-bold text-danger mb-0">Trending Movies</p>
+        <ExploreBtn linkTo="movies" />
+      </div>
       {isLoading ? (
         <Loader />
       ) : (
@@ -16,7 +19,6 @@ function TrendingMovies() {
           {data.data.results.map((movie) => (
             <MediaTile type="movie" data={movie} key={movie.id} />
           ))}
-          <ExploreBtn linkTo="movies" />
         </div>
       )}
     </>
