@@ -8,11 +8,11 @@ function MediaTile({ type, data }) {
   const { data: configData } = useApiConfiguration();
 
   return (
-    <div className="poster-tile">
+    <div className="media-tile">
       <div className="poster">
         <Link
           to={`/${type === "movie" ? "movies" : "tv"}/view/${data.id}`}
-          className="poster-link">
+          className="media-link">
           <img
             src={`${configData?.data.images.secure_base_url}/w185${data.poster_path}`}
             alt={`${type === "movie" ? data.title : data.name} poster`}

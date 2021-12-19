@@ -4,27 +4,25 @@ import {
   configuration,
   popularMovies,
   popularTvShows,
+  popularPeople,
 } from "../api/api";
 
-function useGlobalSearch() {
+export function useGlobalSearch() {
   return useQuery("global-search", globalSearch);
 }
 
-function usePopularMovies() {
+export function usePopularMovies() {
   return useQuery("popular-movies", popularMovies);
 }
 
-function usePopularTvShows() {
+export function usePopularTvShows() {
   return useQuery("popular-tv-shows", popularTvShows);
 }
 
-function useApiConfiguration() {
-  return useQuery("config", configuration);
+export function usePopularPeople() {
+  return useQuery("popular-people", popularPeople);
 }
 
-export {
-  useGlobalSearch,
-  usePopularMovies,
-  usePopularTvShows,
-  useApiConfiguration,
-};
+export function useApiConfiguration() {
+  return useQuery("config", configuration);
+}

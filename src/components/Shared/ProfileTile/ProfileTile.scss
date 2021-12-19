@@ -1,0 +1,24 @@
+@import "../../../resources/theme/variables";
+.profile-tile {
+  box-shadow: $bottom-shadow-lg;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  position: relative;
+  min-width: 185px;
+  .profile-img {
+    min-width: 185px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5rem;
+    min-height: 25%;
+    color: $white;
+    border-radius: 0.75rem;
+    background-image: linear-gradient(to top, $dark, transparent);
+  }
+}

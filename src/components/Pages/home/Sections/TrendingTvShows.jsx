@@ -1,11 +1,11 @@
 import React from "react";
 import { usePopularTvShows } from "../../../../services/hooks/queryHooks";
 import Loader from "../../../Shared/Loader/Loader";
-import PosterTile from "../../../Shared/MediaTile/PosterTile";
+import MediaTile from "../../../Shared/MediaTile/MediaTile";
+import ExploreBtn from "../ExploreBtn";
 
 function TrendingTvShows() {
-  const { isLoading, data, isFetching } = usePopularTvShows();
-  console.log({ isLoading, isFetching });
+  const { isLoading, data } = usePopularTvShows();
   return (
     <>
       <p className="fw-bold text-danger">Trending TV Shows</p>
@@ -14,8 +14,9 @@ function TrendingTvShows() {
       ) : (
         <div className="home-section">
           {data.data.results.map((show) => (
-            <PosterTile type="show" data={show} key={show.id} />
+            <MediaTile type="show" data={show} key={show.id} />
           ))}
+          <ExploreBtn linkTo="tv" />
         </div>
       )}
     </>

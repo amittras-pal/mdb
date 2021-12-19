@@ -3,4 +3,5 @@ export const ENDPOINTS = {
   configuration: "/configuration",
   popularMovies: "/movie/popular",
   popularTvShows: "/tv/popular",
+  popularPeople: "/person/popular",
 };

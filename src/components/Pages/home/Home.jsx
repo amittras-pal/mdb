@@ -1,6 +1,7 @@
 import React from "react";
 import intro from "../../../resources/images/intro.jpg";
 import "./Home.scss";
+import TrendingPeople from "./Sections/TrendingPeople";
 import TrendingMovies from "./Sections/TrendingMovies";
 import TrendingTvShows from "./Sections/TrendingTvShows";
 
@@ -24,14 +25,7 @@ function Home() {
       <div className="home-body px-2 py-3">
         <TrendingMovies />
         <TrendingTvShows />
-        <p className="fw-bold text-danger">Popular TV Shows</p>
-        <p className="text-dark">
-          Section will contain a list Popular TV Shows
-        </p>
-        <p className="fw-bold text-danger">Top Rated TV Shows</p>
-        <p className="text-dark">
-          Section will contain a list of Top Rated TV Shows
-        </p>
+        <TrendingPeople />
       </div>
     </div>
   );
