@@ -4,4 +4,5 @@ export const ENDPOINTS = {
   popularMovies: "/movie/popular",
   popularTvShows: "/tv/popular",
   popularPeople: "/person/popular",
+  movieById: "/movie/",
 };

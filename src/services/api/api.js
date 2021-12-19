@@ -25,3 +25,12 @@ export function popularTvShows() {
 export function popularPeople() {
   return axios.get(ENDPOINTS.popularPeople);
 }
+
+export function movieById(movieId) {
+  return axios.get(ENDPOINTS.movieById + movieId, {
+    params: {
+      append_to_response:
+        "videos,images,reviews,credits,recommendations,keywords",
+    },
+  });
+}
