@@ -1,6 +1,8 @@
 import React from "react";
 import intro from "../../../resources/images/intro.jpg";
 import "./Home.scss";
+import TrendingMovies from "./Sections/TrendingMovies";
+import TrendingTvShows from "./Sections/TrendingTvShows";
 
 function Home() {
   return (
@@ -19,15 +21,9 @@ function Home() {
           </p>
         </div>
       </div>
-      <div className="home-body p-3">
-        <p className="fw-bold text-danger">Popular Movies</p>
-        <p className="text-dark">
-          Section will contain a list of Currently Popular Movies
-        </p>
-        <p className="fw-bold text-danger">Top Rated Movies</p>
-        <p className="text-dark">
-          Section will contain a list of Top rated Movies
-        </p>
+      <div className="home-body px-2 py-3">
+        <TrendingMovies />
+        <TrendingTvShows />
         <p className="fw-bold text-danger">Popular TV Shows</p>
         <p className="text-dark">
           Section will contain a list Popular TV Shows

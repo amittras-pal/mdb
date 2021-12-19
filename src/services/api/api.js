@@ -15,4 +15,12 @@ function configuration() {
   return axios.get(ENDPOINTS.configuration);
 }
 
-export { globalSearch, configuration };
+function popularMovies() {
+  return axios.get(ENDPOINTS.popularMovies);
+}
+
+function popularTvShows() {
+  return axios.get(ENDPOINTS.popularTvShows);
+}
+
+export { globalSearch, configuration, popularMovies, popularTvShows };

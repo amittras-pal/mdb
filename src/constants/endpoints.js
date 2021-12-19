@@ -1,4 +1,6 @@
 export const ENDPOINTS = {
   globalSearch: "/search/",
   configuration: "/configuration",
+  popularMovies: "/movie/popular",
+  popularTvShows: "/tv/popular",
 };

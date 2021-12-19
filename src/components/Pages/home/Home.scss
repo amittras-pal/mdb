@@ -1,7 +1,7 @@
 @import "../../../resources/theme/variables";
 .home {
   .hero-section {
-    height: 20rem;
+    height: 24rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,5 +21,15 @@
     .content {
       z-index: 1;
     }
+  }
+  .home-section {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
