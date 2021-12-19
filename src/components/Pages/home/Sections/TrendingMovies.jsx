@@ -1,7 +1,7 @@
 import React from "react";
 import { usePopularMovies } from "../../../../services/hooks/queryHooks";
 import Loader from "../../../Shared/Loader/Loader";
-import MovieTile from "../../../Shared/Movie/MovieTile";
+import PosterTile from "../../../Shared/MediaTile/PosterTile";
 
 function TrendingMovies() {
   const { isLoading, data } = usePopularMovies();
@@ -13,7 +13,7 @@ function TrendingMovies() {
       ) : (
         <div className="home-section">
           {data.data.results.map((movie) => (
-            <MovieTile movie={movie} key={movie.id} />
+            <PosterTile type="movie" data={movie} key={movie.id} />
           ))}
         </div>
       )}

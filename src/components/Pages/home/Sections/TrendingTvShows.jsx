@@ -1,7 +1,7 @@
 import React from "react";
 import { usePopularTvShows } from "../../../../services/hooks/queryHooks";
 import Loader from "../../../Shared/Loader/Loader";
-import TvShowTile from "../../../Shared/TvShow/TvShowTile";
+import PosterTile from "../../../Shared/MediaTile/PosterTile";
 
 function TrendingTvShows() {
   const { isLoading, data, isFetching } = usePopularTvShows();
@@ -14,7 +14,7 @@ function TrendingTvShows() {
       ) : (
         <div className="home-section">
           {data.data.results.map((show) => (
-            <TvShowTile show={show} key={show.id} />
+            <PosterTile type="show" data={show} key={show.id} />
           ))}
         </div>
       )}
