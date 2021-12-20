@@ -43,16 +43,16 @@ body {
 
 /* scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
-  border-radius: 6px;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb {
-  background: $grey;
-  border-radius: 6px;
+  background: $scroll;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: $grey;
+  background: $scroll;
 }

@@ -14,7 +14,7 @@ function Sidebar() {
 
   const closeSidebar = useCallback(() => {
     dispatch(toggleSidebar());
-    document.getElementById("content").classList.remove("block-scroll");
+    // document.getElementById("content").classList.remove("block-scroll");
   }, [dispatch]);
 
   useEffect(() => {
@@ -43,7 +43,8 @@ function Sidebar() {
                   to={item.path}
                   className="sidebar__nav__button"
                   activeclassname="active"
-                  onClick={closeSidebar}>
+                  onClick={closeSidebar}
+                >
                   <span className="icon-container">
                     <FontAwesomeIcon icon={item.icon} />
                   </span>

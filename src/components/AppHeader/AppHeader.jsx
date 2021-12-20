@@ -2,6 +2,7 @@ import { faBars, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Tooltip } from "react-tippy";
 import { toggleSidebar } from "../../store/actions/sidebar.action";
 import "./AppHeader.scss";
@@ -14,7 +15,6 @@ function AppHeaderEnhance() {
 
   const openSidebar = () => {
     dispatch(toggleSidebar());
-    document.getElementById("content").classList.add("block-scroll");
   };
 
   const openSearch = () => {
@@ -37,18 +37,19 @@ function AppHeaderEnhance() {
       open={showSearch}
       theme="g-search light"
       interactive
-      html={<SearchPopup onRequestClose={closeSearch} />}>
+      html={<SearchPopup onRequestClose={closeSearch} />}
+    >
       <div className="title">
         <div className="d-md-none">
           <button className="btn me-2" onClick={openSidebar}>
             <FontAwesomeIcon icon={sidebarOpen ? faTimes : faBars} />
           </button>
         </div>
-        <h4 className="m-0 fst-italic">
+        <Link to="/" className="h4 m-0 fst-italic text-decoration-none">
           <span className="text-danger">Intelli</span>
           <span className="text-dark">Shows</span>
           <span className="text-danger">.</span>
-        </h4>
+        </Link>
       </div>
       <button className="btn btn-danger text-light btn-sm" onClick={openSearch}>
         <FontAwesomeIcon icon={faSearch} className="me-2" />

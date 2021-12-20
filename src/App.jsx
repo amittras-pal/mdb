@@ -6,8 +6,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 function App() {
   return (
     <div className="App">
-      <AppHeader />
       <BrowserRouter>
+        <AppHeader />
         <div className="row m-0 body" id="appBody">
           <div className="col-md-2 col-lg-2 px-0 sidebar-container">
             <Sidebar />

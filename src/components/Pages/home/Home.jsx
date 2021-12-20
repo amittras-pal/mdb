@@ -1,16 +1,19 @@
 import React from "react";
 import intro from "../../../resources/images/intro.jpg";
+import { setDocTitle } from "../../../utils/utils";
 import "./Home.scss";
-import TrendingPeople from "./Sections/TrendingPeople";
 import TrendingMovies from "./Sections/TrendingMovies";
+import TrendingPeople from "./Sections/TrendingPeople";
 import TrendingTvShows from "./Sections/TrendingTvShows";
 
 function Home() {
+  setDocTitle("");
   return (
     <div className="home">
       <div
         className="bg-light text-light px-3 py-4 hero-section"
-        style={{ backgroundImage: `url(${intro})` }}>
+        style={{ backgroundImage: `url(${intro})` }}
+      >
         <div className="overlay"></div>
         <div className="content">
           <h2 className="fst-italic">

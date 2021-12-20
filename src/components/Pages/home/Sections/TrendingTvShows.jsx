@@ -19,7 +19,6 @@ function TrendingTvShows() {
           {data.data.results.map((show) => (
             <MediaTile type="show" data={show} key={show.id} />
           ))}
-          <ExploreBtn linkTo="tv" />
         </div>
       )}
     </>

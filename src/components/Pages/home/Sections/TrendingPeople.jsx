@@ -19,7 +19,6 @@ function TrendingPeople() {
           {data.data.results.map((person) => (
             <ProfileTile profile={person} key={person.id} />
           ))}
-          <ExploreBtn linkTo="people" />
         </div>
       )}
     </>
