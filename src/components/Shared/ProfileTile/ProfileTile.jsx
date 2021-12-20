@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useApiConfiguration } from "../../../services/hooks/queryHooks";
+import placeholder from "../../../resources/images/img-placeholder-v.png";
 import "./ProfileTile.scss";
 
 function ProfileTile({ profile, showCharacter }) {
@@ -8,10 +9,14 @@ function ProfileTile({ profile, showCharacter }) {
   return (
     <Link to={`/people/view/${profile.id}`} className="profile-tile">
       <div className="profile-img">
-        <img
-          src={`${configData?.data?.images.secure_base_url}/w185${profile.profile_path}`}
-          alt=""
-        />
+        {profile.profile_path ? (
+          <img
+            src={`${configData?.data?.images.secure_base_url}/w185${profile.profile_path}`}
+            alt=""
+          />
+        ) : (
+          <img src={placeholder} alt="" />
+        )}
       </div>
       <div className="profile-info">
         <p className="fw-bold mb-1">{profile.name}</p>

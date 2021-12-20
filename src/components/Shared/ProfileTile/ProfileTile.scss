@@ -10,7 +10,7 @@
       transform: scale(1.15);
     }
     .profile-info {
-      min-height: 30%;
+      padding-bottom: 1rem;
     }
   }
   .profile-img {
@@ -27,9 +27,8 @@
     bottom: 0;
     width: 100%;
     padding: 0.5rem;
-    min-height: 25%;
     color: $white;
     background-image: linear-gradient(to top, $dark, transparent);
-    transition: min-height 0.25s ease-in-out;
+    transition: padding 0.25s ease-in-out;
   }
 }
