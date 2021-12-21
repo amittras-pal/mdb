@@ -55,66 +55,66 @@
       }
     }
   }
-  .body {
-    .cast-block {
-      .cast-crew {
-        width: 100%;
-        display: flex;
-        padding: 0rem 0.25rem;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 1.25rem;
-        padding-bottom: 1rem;
-      }
+  // .body {
+  .cast-block {
+    .cast-crew {
+      width: 100%;
+      display: flex;
+      padding: 0rem 0.25rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1.25rem;
+      padding-bottom: 1rem;
     }
-    .media {
-      &__header {
-        display: flex;
-        justify-content: flex-start;
-        span {
-          padding-top: 0.25rem;
-        }
-        .tabs {
-          flex: auto;
-          display: flex;
-          overflow-x: auto;
-        }
-        &__tab {
-          font-size: 0.9rem;
-          white-space: nowrap;
-          padding: 0.25rem 1rem;
-          font-weight: 500;
-          text-align: center;
-          border-radius: 0.5rem 0.5rem 0rem 0rem;
-          border: none;
-          background-color: transparent;
-          transition: all 0.15s ease-in-out;
-          border-bottom: 2px solid transparent;
-          &.active {
-            border-bottom-color: $red;
-            background-color: rgba($color: $red, $alpha: 0.1);
-          }
-        }
+  }
+  .media {
+    &__header {
+      display: flex;
+      justify-content: flex-start;
+      span {
+        padding-top: 0.25rem;
       }
-      &__content {
+      .tabs {
+        flex: auto;
         display: flex;
-        gap: 1rem;
-        flex-wrap: nowrap;
         overflow-x: auto;
       }
-    }
-    .right-bar .info {
-      .keywords {
-        display: flex;
-        flex-wrap: wrap;
-        .keyword {
-          padding: 0.125rem 0.25rem;
-          border: 1px solid $red;
+      &__tab {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        padding: 0.25rem 1rem;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 0.5rem 0.5rem 0rem 0rem;
+        border: none;
+        background-color: transparent;
+        transition: all 0.15s ease-in-out;
+        border-bottom: 2px solid transparent;
+        &.active {
+          border-bottom-color: $red;
           background-color: rgba($color: $red, $alpha: 0.1);
-          border-radius: 0.5rem;
-          margin: 0.25rem 0rem;
         }
+      }
+    }
+    &__content {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+  }
+  .right-bar .info {
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      .keyword {
+        padding: 0.125rem 0.25rem;
+        border: 1px solid $red;
+        background-color: rgba($color: $red, $alpha: 0.1);
+        border-radius: 0.5rem;
+        margin: 0.25rem 0rem;
       }
     }
   }
+  // }
 }
