@@ -19,7 +19,7 @@ export const menu = [
     menuHeading: "Categories",
     menuItems: [
       { id: "movies", label: "Movies", icon: faVideo, path: "/movies" },
-      { id: "tv", label: "TV Shows", icon: faTv, path: "/tv" },
+      { id: "tv", label: "Shows", icon: faTv, path: "/tv" },
       { id: "people", label: "People", icon: faUsers, path: "/people" },
     ],
   },
