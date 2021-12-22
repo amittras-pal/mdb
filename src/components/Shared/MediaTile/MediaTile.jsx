@@ -1,28 +1,21 @@
+import { DateTime } from "luxon";
 import React from "react";
 import { Link } from "react-router-dom";
-import { DateTime } from "luxon";
+import Image from "../Image/Image";
 import "./MediaTile.scss";
-import { useApiConfiguration } from "../../../hooks/query.hooks";
 
 function MediaTile({ type, data }) {
-  const { data: configData } = useApiConfiguration();
+  const route = `/${type === "movie" ? "movies" : "tv"}/view/${data.id}`;
 
   return (
     <div className="media-tile">
       <div className="poster">
-        <Link
-          to={`/${type === "movie" ? "movies" : "tv"}/view/${data.id}`}
-          className="media-link">
-          <img
-            src={`${configData?.data.images.secure_base_url}/w185${data.poster_path}`}
-            alt={`${type === "movie" ? data.title : data.name} poster`}
-          />
+        <Link to={route} className="media-link">
+          <Image size="w185" imageType="poster" imagePath={data.poster_path} />
         </Link>
       </div>
       <div className="content mt-2">
-        <Link
-          to={`/${type === "movie" ? "movies" : "tv"}/view/${data.id}`}
-          className="fw-bold text-decoration-none label-link">
+        <Link to={route} className="fw-bold text-decoration-none label-link">
           {type === "movie" ? data.title : data.name}
         </Link>
         <p className="text-muted small mb-0">

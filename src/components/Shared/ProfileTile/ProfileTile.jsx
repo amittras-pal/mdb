@@ -1,22 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useApiConfiguration } from "../../../hooks/query.hooks";
-import placeholder from "../../../resources/images/img-placeholder-v.png";
+import Image from "../Image/Image";
 import "./ProfileTile.scss";
 
 function ProfileTile({ profile, showCharacter }) {
-  const { data: configData } = useApiConfiguration();
   return (
     <Link to={`/people/view/${profile.id}`} className="profile-tile">
       <div className="profile-img">
-        {profile.profile_path ? (
-          <img
-            src={`${configData?.data?.images.secure_base_url}/w185${profile.profile_path}`}
-            alt=""
-          />
-        ) : (
-          <img src={placeholder} alt="" />
-        )}
+        <Image
+          size="w185"
+          imageType="profile"
+          imagePath={profile.profile_path}
+        />
       </div>
       <div className="profile-info">
         <p className="fw-bold mb-1">{profile.name}</p>
