@@ -1,7 +1,7 @@
 import React from "react";
 import portraitPlaceholder from "../../../resources/images/img-placeholder-v.png";
 import { useApiConfiguration } from "../../../hooks/query.hooks";
-import { createImageUrl } from "./imageUtils";
+import { createImageUrl } from "../../../utils/utils";
 
 function Image({ imagePath, imageType, size, orientation }) {
   const { data: config, isLoading, isError } = useApiConfiguration();
