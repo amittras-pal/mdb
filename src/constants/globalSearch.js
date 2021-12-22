@@ -1,5 +1,5 @@
-export const searchCategories = {
-  PERSON: "person",
-  MOVIE: "movie",
-  TV: "tv",
-};
+export const categories = [
+  { label: "Movie", value: "movie" },
+  { label: "TV Show", value: "tv" },
+  { label: "Person", value: "person" },
+];

@@ -1,15 +1,15 @@
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Field, FormikProvider, useFormik } from "formik";
-import { searchCategories } from "../../constants/globalSearch";
 import React from "react";
 import * as Yup from "yup";
+import { categories } from "../../constants/globalSearch";
 
 function SearchPopup({ onRequestClose }) {
   const searchForm = useFormik({
     initialValues: {
       query: "",
-      searchType: searchCategories.MOVIE,
+      searchType: categories[0].value,
     },
     validationSchema: Yup.object({
       query: Yup.string().required(),
@@ -45,42 +45,22 @@ function SearchPopup({ onRequestClose }) {
             </button>
           </div>
           <div className="btn-group w-100 mb-2" role="group">
-            <Field
-              type="radio"
-              className="btn-check"
-              name="searchType"
-              id={searchCategories.MOVIE}
-              value={searchCategories.MOVIE}
-            />
-            <label
-              className="btn btn-sm btn-outline-danger fw-bold"
-              htmlFor={searchCategories.MOVIE}>
-              Movie
-            </label>
-            <Field
-              type="radio"
-              className="btn-check"
-              name="searchType"
-              id={searchCategories.TV}
-              value={searchCategories.TV}
-            />
-            <label
-              className="btn btn-sm btn-outline-danger fw-bold"
-              htmlFor={searchCategories.TV}>
-              TV Shows
-            </label>
-            <Field
-              type="radio"
-              className="btn-check"
-              name="searchType"
-              id={searchCategories.PERSON}
-              value={searchCategories.PERSON}
-            />
-            <label
-              className="btn btn-sm btn-outline-danger fw-bold"
-              htmlFor={searchCategories.PERSON}>
-              Person
-            </label>
+            {categories.map((cat) => (
+              <React.Fragment key={cat.value}>
+                <Field
+                  type="radio"
+                  className="btn-check"
+                  name="searchType"
+                  id={cat.value}
+                  value={cat.value}
+                />
+                <label
+                  className="btn btn-sm btn-outline-danger fw-bold"
+                  htmlFor={cat.value}>
+                  {cat.label}
+                </label>
+              </React.Fragment>
+            ))}
           </div>
         </form>
       </FormikProvider>

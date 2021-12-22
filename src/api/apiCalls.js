@@ -1,10 +1,10 @@
 import { ENDPOINTS } from "../constants/endpoints";
-import { searchCategories } from "../constants/globalSearch";
+import { categories } from "../constants/globalSearch";
 import axios from "./axiosConfig";
 
 export function globalSearch() {
-  // these params will be provided by the component
-  return axios.get(ENDPOINTS.globalSearch + searchCategories.MOVIE, {
+  // Implementation needed, not yet used anywhere.
+  return axios.get(ENDPOINTS.globalSearch + categories[0].value, {
     params: {
       query: "batman",
     },
