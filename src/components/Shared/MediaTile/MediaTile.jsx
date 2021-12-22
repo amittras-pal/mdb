@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { DateTime } from "luxon";
 import "./MediaTile.scss";
-import { useApiConfiguration } from "../../../services/hooks/queryHooks";
+import { useApiConfiguration } from "../../../hooks/query.hooks";
 
 function MediaTile({ type, data }) {
   const { data: configData } = useApiConfiguration();

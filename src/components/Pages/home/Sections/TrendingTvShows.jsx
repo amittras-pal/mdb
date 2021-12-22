@@ -1,5 +1,5 @@
 import React from "react";
-import { usePopularTvShows } from "../../../../services/hooks/queryHooks";
+import { usePopularTvShows } from "../../../../hooks/query.hooks";
 import Loader from "../../../Shared/Loader/Loader";
 import MediaTile from "../../../Shared/MediaTile/MediaTile";
 import ExploreBtn from "../ExploreBtn";

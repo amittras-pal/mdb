@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useMovieById } from "../../../../services/hooks/queryHooks";
+import { useMovieById } from "../../../../hooks/query.hooks";
 import { setDocTitle } from "../../../../utils/utils";
 import AttributionFooter from "../../../Shared/AttributionFooter/AttributionFooter";
 import Loader from "../../../Shared/Loader/Loader";

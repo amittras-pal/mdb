@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useApiConfiguration } from "../../../services/hooks/queryHooks";
+import { useApiConfiguration } from "../../../hooks/query.hooks";
 import placeholder from "../../../resources/images/img-placeholder-v.png";
 import "./ProfileTile.scss";
 

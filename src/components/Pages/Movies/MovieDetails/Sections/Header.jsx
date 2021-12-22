@@ -1,6 +1,6 @@
 import React from "react";
 import { Tooltip } from "react-tippy";
-import { useApiConfiguration } from "../../../../../services/hooks/queryHooks";
+import { useApiConfiguration } from "../../../../../hooks/query.hooks";
 
 function Header({ movie }) {
   const { data: configData } = useApiConfiguration();

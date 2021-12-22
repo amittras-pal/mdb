@@ -1,6 +1,6 @@
-import { ENDPOINTS } from "../../constants/endpoints";
-import { searchCategories } from "../../constants/globalSearch";
-import axios from "../axiosConfig";
+import { ENDPOINTS } from "../constants/endpoints";
+import { searchCategories } from "../constants/globalSearch";
+import axios from "./axiosConfig";
 
 export function globalSearch() {
   // these params will be provided by the component

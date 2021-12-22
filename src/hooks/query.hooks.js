@@ -6,7 +6,7 @@ import {
   popularTvShows,
   popularPeople,
   movieById,
-} from "../api/api";
+} from "../api/apiCalls";
 
 export function useGlobalSearch() {
   return useQuery("global-search", globalSearch);

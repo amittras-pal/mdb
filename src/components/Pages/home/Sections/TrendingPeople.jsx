@@ -1,5 +1,5 @@
 import React from "react";
-import { usePopularPeople } from "../../../../services/hooks/queryHooks";
+import { usePopularPeople } from "../../../../hooks/query.hooks";
 import Loader from "../../../Shared/Loader/Loader";
 import ProfileTile from "../../../Shared/ProfileTile/ProfileTile";
 import ExploreBtn from "../ExploreBtn";

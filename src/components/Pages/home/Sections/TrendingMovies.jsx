@@ -1,5 +1,5 @@
 import React from "react";
-import { usePopularMovies } from "../../../../services/hooks/queryHooks";
+import { usePopularMovies } from "../../../../hooks/query.hooks";
 import Loader from "../../../Shared/Loader/Loader";
 import MediaTile from "../../../Shared/MediaTile/MediaTile";
 import ExploreBtn from "../ExploreBtn";
