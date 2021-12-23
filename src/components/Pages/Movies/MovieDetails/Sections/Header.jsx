@@ -9,7 +9,8 @@ function Header({ movie }) {
       className="header"
       style={{
         backgroundImage: `url(${configData?.data.images.secure_base_url}original${movie.backdrop_path})`,
-      }}>
+      }}
+    >
       <div className="overlay"></div>
       <div className="content align-items-md-end">
         <div className="poster">
@@ -20,8 +21,8 @@ function Header({ movie }) {
         </div>
         <div className="title-area">
           <div className="title">
-            <p className="h3 text-light">{movie.title}</p>
-            <p className="h5 fw-normal text-light fst-italic small">
+            <p className="h3 text-secondary">{movie.title}</p>
+            <p className="h5 fw-normal text-secondary fst-italic small">
               {movie.tagline}
             </p>
           </div>
@@ -37,8 +38,9 @@ function Header({ movie }) {
                 Based on <span className="fw-bold">{movie.vote_count}</span>{" "}
                 votes!
               </p>
-            }>
-            <span className="text-light mb-0 small fw-bold">
+            }
+          >
+            <span className="text-secondary mb-0 small fw-bold">
               {movie.vote_average}
             </span>
           </Tooltip>

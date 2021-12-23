@@ -9,7 +9,7 @@ function TrendingPeople() {
   return (
     <>
       <div className="d-flex w-100 justify-content-between align-items-center mb-3">
-        <p className="fw-bold text-danger mb-0">Happening Stars</p>
+        <p className="fw-bold text-warning mb-0">Happening Stars</p>
         <ExploreBtn linkTo="people" />
       </div>
       {isLoading ? (

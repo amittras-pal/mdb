@@ -20,9 +20,11 @@ function MediaTile({ type, data }) {
         </Link>
         <p className="text-muted small mb-0">
           {type === "movie" ? "Released: " : "First Aired: "}
-          {DateTime.fromISO(
-            type === "movie" ? data.release_date : data.first_air_date
-          ).toLocaleString(DateTime.DATE_MED)}
+          <span className="fst-italic">
+            {DateTime.fromISO(
+              type === "movie" ? data.release_date : data.first_air_date
+            ).toLocaleString(DateTime.DATE_MED)}
+          </span>
         </p>
       </div>
     </div>

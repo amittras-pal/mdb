@@ -5,7 +5,7 @@ function Media({ movie }) {
   return (
     <div className="media my-3">
       <div className="media__header">
-        <span className="mb-0 fw-bold text-danger me-3">Media</span>
+        <span className="mb-0 fw-bold text-primary me-3">Media</span>
 
         <div className="tabs">
           <button
@@ -14,8 +14,12 @@ function Media({ movie }) {
                 ? "media__header__tab active"
                 : "media__header__tab"
             }
-            onClick={() => setMediaView("videos")}>
-            Videos ({movie.videos?.results.length})
+            onClick={() => setMediaView("videos")}
+          >
+            Videos{" "}
+            <span className="text-warning">
+              ({movie.videos?.results.length})
+            </span>
           </button>
           <button
             className={
@@ -23,8 +27,12 @@ function Media({ movie }) {
                 ? "media__header__tab active"
                 : "media__header__tab"
             }
-            onClick={() => setMediaView("backdrops")}>
-            Backdrops ({movie.images?.backdrops.length})
+            onClick={() => setMediaView("backdrops")}
+          >
+            Backdrops{" "}
+            <span className="text-warning">
+              ({movie.images?.backdrops.length})
+            </span>
           </button>
           <button
             className={
@@ -32,8 +40,12 @@ function Media({ movie }) {
                 ? "media__header__tab active"
                 : "media__header__tab"
             }
-            onClick={() => setMediaView("posters")}>
-            Posters ({movie.images?.posters.length})
+            onClick={() => setMediaView("posters")}
+          >
+            Posters{" "}
+            <span className="text-warning">
+              ({movie.images?.posters.length})
+            </span>
           </button>
         </div>
       </div>

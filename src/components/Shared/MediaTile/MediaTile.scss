@@ -1,4 +1,4 @@
-@import "../../../resources/theme/variables";
+@import "../../../resources/theme/color";
 .media-tile {
   width: 150px;
   min-width: 150px;
@@ -7,7 +7,7 @@
       transform: scale(1.15);
     }
     .label-link {
-      color: $danger;
+      color: $primary;
     }
   }
   .poster {
@@ -17,7 +17,7 @@
     width: 100%;
     height: 15rem;
     min-height: 15rem;
-    box-shadow: $bottom-shadow-lg;
+    box-shadow: 0px 10px 20px -3px rgba($color: $muted, $alpha: 0.4);
     .media-link {
       width: 100%;
       height: 100%;
@@ -31,7 +31,7 @@
     }
   }
   .label-link {
-    color: $dark;
+    color: $secondary;
     transition: color 0.15s ease-in-out;
   }
 }

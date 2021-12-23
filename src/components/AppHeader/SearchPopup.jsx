@@ -23,7 +23,7 @@ function SearchPopup({ onRequestClose }) {
     <div className="g-search">
       <div className="d-flex justify-content-between align-items-center heading mb-2">
         <p className="text-dark">Search movies, tv or people</p>
-        <button className="btn text-dark" onClick={() => onRequestClose()}>
+        <button className="btn text-primary" onClick={() => onRequestClose()}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
       </div>
@@ -34,13 +34,14 @@ function SearchPopup({ onRequestClose }) {
               type="text"
               name="query"
               id="gSearch"
-              className="form-control form-control-sm border-danger"
+              className="form-control form-control-sm border-primary"
               placeholder="Search"
             />
             <button
-              className="btn btn-outline-danger btn-sm "
+              className="btn btn-outline-primary btn-sm "
               type="submit"
-              disabled={!searchForm.isValid}>
+              disabled={!searchForm.isValid}
+            >
               <FontAwesomeIcon icon={faSearch} />
             </button>
           </div>
@@ -55,8 +56,9 @@ function SearchPopup({ onRequestClose }) {
                   value={cat.value}
                 />
                 <label
-                  className="btn btn-sm btn-outline-danger fw-bold"
-                  htmlFor={cat.value}>
+                  className="btn btn-sm btn-outline-primary fw-bold"
+                  htmlFor={cat.value}
+                >
                   {cat.label}
                 </label>
               </React.Fragment>
