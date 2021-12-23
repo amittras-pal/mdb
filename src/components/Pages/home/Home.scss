@@ -1,4 +1,4 @@
-@import "../../../resources/theme/variables";
+@import "../../../resources/theme/color";
 .home {
   .hero-section {
     height: 24rem;
@@ -18,7 +18,7 @@
       height: 100%;
       width: 100%;
       z-index: 0;
-      background-image: linear-gradient(to right, $black 15%, transparent 100%);
+      background-image: linear-gradient(to right, $dark 15%, transparent 100%);
     }
     .content {
       z-index: 1;
@@ -33,7 +33,7 @@
     text-decoration: none;
     transition: color 0.15s ease-in-out;
     &:hover {
-      color: $danger;
+      color: $warning;
     }
   }
   .home-section {

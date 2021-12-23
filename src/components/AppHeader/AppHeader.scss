@@ -1,9 +1,9 @@
-@import "../../resources/theme/variables";
+@import "../../resources/theme/color";
 .app-header {
   height: 4rem;
   width: 100vw;
-  background-color: rgba($color: $white, $alpha: 0.4);
-  border-bottom: 1px solid $grey;
+  background-color: $muted-50;
+  border-bottom: 1px solid $primary;
   display: flex !important;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +17,6 @@
 
 .g-search-theme {
   border-radius: 0.75rem !important;
-  box-shadow: $bottom-shadow-lg !important;
   .g-search {
     .heading {
       height: 40px;
@@ -27,13 +26,9 @@
         margin-bottom: 0;
       }
     }
-    input.form-control:focus {
-      box-shadow: none;
-      border-width: 2px;
-    }
     label.btn-outline-danger:hover,
     .btn-check:checked + label {
-      color: $light !important;
+      color: $secondary !important;
     }
   }
 }

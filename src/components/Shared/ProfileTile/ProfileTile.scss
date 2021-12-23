@@ -1,6 +1,6 @@
-@import "../../../resources/theme/variables";
+@import "../../../resources/theme/color";
 .profile-tile {
-  box-shadow: $bottom-shadow-lg;
+  box-shadow: 10px 0px 20px -3px rgba($color: $muted, $alpha: 0.4);
   border-radius: 0.75rem;
   overflow: hidden;
   position: relative;
@@ -27,7 +27,7 @@
     bottom: 0;
     width: 100%;
     padding: 0.5rem;
-    color: $white;
+    color: $secondary;
     background-image: linear-gradient(to top, $dark, transparent);
     transition: padding 0.25s ease-in-out;
   }
