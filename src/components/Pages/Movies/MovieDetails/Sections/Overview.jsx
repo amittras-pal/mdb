@@ -8,7 +8,7 @@ function Overview({ movie }) {
 
   return (
     <div className="overview my-3">
-      <p className="text-primary fw-bold">Overview: </p>
+      <p className="text-primary fw-bold">Overview </p>
       <div className="section-content">
         <p>{movie.overview}</p>
         <div className="movie-basics">

@@ -7,6 +7,7 @@
     left: -100%;
     width: 70vw;
     height: 100vh !important;
+    background-color: $muted !important;
     min-width: 250px;
     box-shadow: 10px 0px 20px -3px rgba($color: $muted, $alpha: 0.4);
     transition: left 0.5s ease-in-out;
@@ -38,7 +39,7 @@
 
 .sidebar {
   height: calc(100vh - 4rem);
-  background-color: $dark;
+  background-color: $muted-50;
   .sidebar-menu {
     padding-right: 1rem;
     overflow-y: auto;
@@ -57,7 +58,7 @@
       padding: 0 1rem;
       font-weight: 700;
       letter-spacing: 0.2rem;
-      color: $warning;
+      color: $primary;
     }
     .sidebar__nav {
       list-style: none;
@@ -77,14 +78,24 @@
         color: $secondary;
         transition: all 0.2s ease-in-out;
         border-radius: 0rem 1.5rem 1.5rem 0rem;
-
         &:hover,
         &:focus {
-          background-color: $muted;
+          background-color: $muted-50;
           outline: none;
         }
         &.active {
-          background-color: $primary;
+          background-color: $muted-50;
+          color: $warning;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: $warning;
+          }
         }
         .icon-container {
           width: 24px;

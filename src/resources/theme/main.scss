@@ -32,6 +32,9 @@ body {
       height: calc(100vh - 64px);
       overflow-y: auto;
     }
+    .footer {
+      background-color: $muted;
+    }
   }
 }
 .pointer {
