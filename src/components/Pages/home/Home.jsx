@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className="home">
       <div
-        className="bg-light text-light px-3 py-4 hero-section"
+        className="text-secondary px-3 py-4 hero-section"
         style={{ backgroundImage: `url(${intro})` }}
       >
         <div className="overlay"></div>

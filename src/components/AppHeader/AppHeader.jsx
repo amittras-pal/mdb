@@ -41,17 +41,17 @@ function AppHeaderEnhance() {
     >
       <div className="title">
         <div className="d-md-none">
-          <button className="btn me-2" onClick={openSidebar}>
+          <button className="btn me-2 text-secondary" onClick={openSidebar}>
             <FontAwesomeIcon icon={sidebarOpen ? faTimes : faBars} />
           </button>
         </div>
         <Link to="/" className="h4 m-0 fst-italic text-decoration-none">
-          <span className="text-danger">Intelli</span>
-          <span className="text-dark">Shows</span>
-          <span className="text-danger">.</span>
+          <span className="text-secondary">Intelli</span>
+          <span className="text-primary">Shows</span>
+          <span className="text-warning">.</span>
         </Link>
       </div>
-      <button className="btn btn-danger text-light btn-sm" onClick={openSearch}>
+      <button className="btn btn-primary btn-sm" onClick={openSearch}>
         <FontAwesomeIcon icon={faSearch} className="me-2" />
         <span>Search</span>
       </button>

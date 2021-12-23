@@ -7,8 +7,8 @@ function Cast({ movie }) {
   return (
     <div className="cast-block">
       <div className="d-flex align-items-center justify-content-between mb-2">
-        <p className="fw-bold text-danger mb-0">Cast</p>
-        <button className="btn btn-sm pe-0">
+        <p className="fw-bold text-primary mb-0">Cast</p>
+        <button className="btn btn-sm text-warning pe-0">
           <span className="me-2">See All {movie.credits.cast.length}</span>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>

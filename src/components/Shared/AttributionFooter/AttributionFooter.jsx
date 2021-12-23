@@ -3,9 +3,7 @@ import tmdbLogo from "../../../resources/images/tmdb-logo.svg";
 
 function AttributionFooter() {
   return (
-    <div
-      className="footer bg-danger text-light d-flex justify-content-center align-items-center p-2"
-      style={{ gap: "1.25rem" }}>
+    <div className="footer bg-secondary text-primary d-flex justify-content-between align-items-center p-2">
       <p className="m-0 small">
         This program uses community curated data provided by{" "}
         <span className="fw-bold">TMDB (themoviedb.org) </span> API. This
