@@ -1,0 +1,40 @@
+@import "../../../resources/theme/color";
+
+.review-tile {
+  background-color: $muted !important;
+  box-shadow: 0px 5px 10px -3px rgba($color: $dark, $alpha: 1);
+  .card-header {
+    gap: 0.75rem;
+  }
+  .author-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid $secondary;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
+  .author-details {
+    flex: auto;
+  }
+  .author-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: $warning;
+    border: 2px solid $primary;
+  }
+  .review-date {
+    font-size: 0.7rem;
+  }
+  .card-text {
+    white-space: pre-wrap;
+  }
+}

@@ -35,7 +35,7 @@ function MovieDetails() {
           <Overview movie={movie} />
           <Cast movie={movie} />
           <Media movie={movie} />
-          <Reviews />
+          <Reviews movie={movie} />
           <Recommendations />
         </div>
         <div className="col-md-3 right-bar">
