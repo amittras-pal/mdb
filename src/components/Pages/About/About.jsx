@@ -1,44 +1,67 @@
 import React from "react";
 import "./About.scss";
-// import tmdbLogo from "../../resources/images/tmdb-logo.svg";
+import { setDocTitle } from "../../../utils/utils";
+import { APP_TITLE } from "../../../constants/appConstants";
 
 function About() {
+  setDocTitle("About Us");
   return (
-    <div className="about row m-0">
-      {/* <div className="attrib">
-        <p className="text-secondary m-0">
-          This product uses the <span className="fw-bold">TMDB API</span> but is
-          not endorsed or certified by TMDB.
+    <div className="about">
+      <div className="container mt-3">
+        <h1 className="fw-normal">About</h1>
+      </div>
+      <div className="container">
+        <p>
+          <span className="fw-bold">{APP_TITLE}</span> is built on top of the
+          amazing{" "}
+          <a
+            className="fst-italic text-decoration-none text-warning"
+            href="https://www.themoviedb.org/about"
+            target="_blank">
+            themoviedb.org (TMDB),
+          </a>{" "}
+          which is a community built movie and TV database. Every piece of data
+          has been added by an amazing community spead across the world dating
+          back to 2008. This program simply uses the generously provided API by
+          the platform.
         </p>
-        <img src={tmdbLogo} alt="" />
-      </div> */}
-      <div className="about-scroll">
-        <h3>About Page</h3>
-        <h5>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae
-          molestias veniam ullam ipsum, ut, recusandae quas voluptas praesentium
-          rerum necessitatibus iure consectetur dolorem, sapiente magni tempora
-          possimus deserunt laboriosam minima! Labore accusantium impedit,
-          perspiciatis et provident repellat. Ullam sequi eveniet culpa, veniam
-          quibusdam dignissimos, in vero autem sapiente cum officia optio
-          inventore at est deserunt iste dolorem libero blanditiis commodi.
-          Velit distinctio a, facere rem quod itaque eligendi hic iste
-          reiciendis illum aliquid aperiam accusamus laborum eius aut debitis,
-          harum in repudiandae? Ducimus voluptate dolorum accusamus asperiores
-          corporis ipsum sit architecto odio impedit ad porro, perferendis
-          molestiae iusto sequi culpa aut ea in natus laudantium nobis
-          repudiandae odit hic deserunt. Vel, repellat, voluptates nulla
-          accusamus aperiam ullam odio omnis a, reiciendis fugiat possimus sint
-          hic ratione! Voluptates maiores pariatur porro velit, nihil, ut, odio
-          dolorum ipsa repellat modi fugit repudiandae ab officia! Ratione
-          aspernatur neque, vel aliquam natus quaerat amet debitis tempora quia,
-          autem perspiciatis similique tempore, quae dicta asperiores eaque
-          vitae rerum nobis laudantium voluptatibus saepe labore sunt pariatur
-          quo. Illo consequuntur delectus aut obcaecati animi quam sequi
-          incidunt natus? Dolorum omnis dicta, quo incidunt atque recusandae
-          dolor at sint corporis ullam cum inventore enim expedita, autem, ipsam
-          rerum?
-        </h5>
+        <p>
+          {APP_TITLE} is a light, user-friendly application built on the popular
+          front-end JavaScript Library React. Through this project, the
+          developer, <span className="fst-italic">Amittras Pal,</span> indends
+          to showcase their understanding of user-friendly design abilities,
+          creativity, and knowledge of JavaScript and React as a whole.
+        </p>
+      </div>
+      <div className="color-palette">
+        <h4 className="fw-normal text-dark">Color Palette</h4>
+        <div className="swatches">
+          <div className="swatch-container">
+            <div className="swatch cherry" />
+            <p className="mb-0 mt-2 fw-bold text-dark">Cherry</p>
+            <p className="m-0 small text-muted">#da0037</p>
+          </div>
+          <div className="swatch-container">
+            <div className="swatch cream" />
+            <p className="mb-0 mt-2 fw-bold text-dark">Cream</p>
+            <p className="m-0 small text-muted">#ededed</p>
+          </div>
+          <div className="swatch-container">
+            <div className="swatch cheddar" />
+            <p className="mb-0 mt-2 fw-bold text-dark">Cheddar</p>
+            <p className="m-0 small text-muted">#ffd369</p>
+          </div>
+          <div className="swatch-container">
+            <div className="swatch steel" />
+            <p className="mb-0 mt-2 fw-bold text-dark">Steel</p>
+            <p className="m-0 small text-muted">#444444</p>
+          </div>
+          <div className="swatch-container">
+            <div className="swatch onyx" />
+            <p className="mb-0 mt-2 fw-bold text-dark">Onyx</p>
+            <p className="m-0 small text-muted">#201d1d</p>
+          </div>
+        </div>
       </div>
     </div>
   );
