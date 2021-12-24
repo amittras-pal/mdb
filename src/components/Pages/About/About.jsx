@@ -17,7 +17,8 @@ function About() {
           <a
             className="fst-italic text-decoration-none text-warning"
             href="https://www.themoviedb.org/about"
-            target="_blank">
+            target="_blank"
+            rel="noreferrer">
             themoviedb.org (TMDB),
           </a>{" "}
           which is a community built movie and TV database. Every piece of data

@@ -21,7 +21,7 @@ function ReviewCard({ review }) {
           )}
         </div>
         <div className="author-details">
-          <p className="card-title fw-bold text-warning mb-1">
+          <p className="card-title fw-bold small text-warning mb-1">
             {review.author_details.name}
           </p>
           <p className="mb-0 review-date fst-italic">

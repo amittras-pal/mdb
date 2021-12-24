@@ -28,7 +28,11 @@ function ReviewsModal({ movieId, movieTitle, onClose }) {
   return (
     <>
       <div className="modal-header">
-        <div className="modal-title">Reviews</div>
+        <div className="modal-title">
+          <p className="mb-0 small fw-bold">REVIEWS</p>
+          <p className="mb-0 small">{movieTitle}</p>
+        </div>
+
         <button className="btn btn-sm text-primary d-md-none" onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
@@ -38,7 +42,6 @@ function ReviewsModal({ movieId, movieTitle, onClose }) {
           <Loader />
         ) : (
           <>
-            <p className="fw-bold">{movieTitle}</p>
             {reviews?.data?.results.map((review) => (
               <ReviewCard review={review} key={review.id} />
             ))}
