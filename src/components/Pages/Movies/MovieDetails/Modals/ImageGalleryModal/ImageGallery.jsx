@@ -2,12 +2,10 @@ import {
   faChevronLeft,
   faChevronRight,
   faDownload,
-  faEllipsisV,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Tooltip } from "react-tippy";
 import { useApiConfiguration } from "../../../../../../hooks/query.hooks";
 import { createImageUrl, downloadImage } from "../../../../../../utils/utils";
 import "./ImageGallery.scss";
@@ -35,25 +33,9 @@ function ImageGallery({ imageList = [], galleryType, onClose, title }) {
           <p className="mb-0 small fw-bold">{galleryType.toUpperCase()}S</p>
           <p className="mb-0 small">{title}</p>
         </div>
-        <Tooltip
-          trigger="click"
-          className="gallery-action btn btn-sm me-2"
-          position="bottom-end"
-          theme="light gallery-action"
-          interactive={true}
-          animateFill={false}
-          html={
-            <div className="list-group list-group-flush">
-              <button
-                className="list-group-item text-dark small"
-                onClick={download}>
-                <FontAwesomeIcon icon={faDownload} className="me-2" />
-                Download
-              </button>
-            </div>
-          }>
-          <FontAwesomeIcon icon={faEllipsisV} className="text-secondary" />
-        </Tooltip>
+        <button className="btn text-secondary mx-2" onClick={download}>
+          <FontAwesomeIcon icon={faDownload} />
+        </button>
         <button className="btn btn-sm text-primary d-md-none" onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
