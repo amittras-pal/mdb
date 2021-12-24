@@ -16,20 +16,20 @@ function AppHeaderEnhance() {
 
   const openSidebar = (e) => {
     e.stopPropagation();
-    blurView("content");
+    blurView("content", true);
     dispatch(toggleSidebar());
   };
 
   const openSearch = () => {
     setShowSearch(true);
-    blurView("appBody");
+    blurView("appBody", true);
     setTimeout(() => {
       document.getElementById("gSearch").focus();
     }, 375);
   };
   const closeSearch = () => {
     setShowSearch(false);
-    blurView("appBody");
+    blurView("appBody", false);
   };
 
   return (

@@ -37,6 +37,9 @@ export function createImageUrl(
   return imgConfig.secure_base_url + size + imagePath;
 }
 
-export function blurView(elementId) {
-  document.getElementById(elementId).classList.toggle("blocked-view");
+export function blurView(elementId, apply) {
+  const element = document.getElementById(elementId);
+  if (apply) element.classList.add("blocked-view");
+  else if (element.classList.contains("blocked-view"))
+    element.classList.remove("blocked-view");
 }

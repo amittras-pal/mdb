@@ -15,7 +15,7 @@ function Sidebar() {
 
   const closeSidebar = useCallback(() => {
     dispatch(toggleSidebar());
-    blurView("content");
+    blurView("content", false);
   }, [dispatch]);
 
   useEffect(() => {
