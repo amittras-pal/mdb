@@ -34,3 +34,11 @@ export function movieById(movieId) {
     },
   });
 }
+
+export function movieReviewsById(movieId, page) {
+  return axios.get(`${ENDPOINTS.movieById}/${movieId}/reviews`, {
+    params: {
+      page,
+    },
+  });
+}

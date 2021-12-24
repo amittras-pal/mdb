@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { menu } from "../../constants/menuItems";
 import { toggleSidebar } from "../../store/actions/sidebar.action";
+import { blurView } from "../../utils/utils";
 import "./Sidebar.scss";
 
 function Sidebar() {
@@ -14,11 +15,12 @@ function Sidebar() {
 
   const closeSidebar = useCallback(() => {
     dispatch(toggleSidebar());
-    // document.getElementById("content").classList.remove("block-scroll");
+    blurView("content");
   }, [dispatch]);
 
   useEffect(() => {
     const handleClick = (event) => {
+      event.stopPropagation();
       if (!menuRef.current?.contains(event.target)) closeSidebar();
     };
     if (sidebarOpen) document.addEventListener("click", handleClick);
@@ -43,8 +45,7 @@ function Sidebar() {
                   to={item.path}
                   className="sidebar__nav__button"
                   activeclassname="active"
-                  onClick={closeSidebar}
-                >
+                  onClick={closeSidebar}>
                   <span className="icon-container">
                     <FontAwesomeIcon icon={item.icon} />
                   </span>

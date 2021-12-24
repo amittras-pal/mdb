@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Tooltip } from "react-tippy";
 import { toggleSidebar } from "../../store/actions/sidebar.action";
+import { blurView } from "../../utils/utils";
 import "./AppHeader.scss";
 import SearchPopup from "./SearchPopup";
 
@@ -13,20 +14,22 @@ function AppHeaderEnhance() {
   const dispatch = useDispatch();
   const { open: sidebarOpen } = useSelector((state) => state);
 
-  const openSidebar = () => {
+  const openSidebar = (e) => {
+    e.stopPropagation();
+    blurView("content");
     dispatch(toggleSidebar());
   };
 
   const openSearch = () => {
     setShowSearch(true);
-    document.getElementById("appBody").classList.add("blocked-view");
+    blurView("appBody");
     setTimeout(() => {
       document.getElementById("gSearch").focus();
     }, 375);
   };
   const closeSearch = () => {
     setShowSearch(false);
-    document.getElementById("appBody").classList.remove("blocked-view");
+    blurView("appBody");
   };
 
   return (
@@ -37,8 +40,7 @@ function AppHeaderEnhance() {
       open={showSearch}
       theme="g-search light"
       interactive
-      html={<SearchPopup onRequestClose={closeSearch} />}
-    >
+      html={<SearchPopup onRequestClose={closeSearch} />}>
       <div className="title">
         <div className="d-md-none">
           <button className="btn me-2 text-secondary" onClick={openSidebar}>
