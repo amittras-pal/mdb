@@ -43,3 +43,14 @@ export function blurView(elementId, apply) {
   else if (element.classList.contains("blocked-view"))
     element.classList.remove("blocked-view");
 }
+
+export async function downloadImage(imageUrl, fileName) {
+  const imageData = await fetch(imageUrl);
+  const imgBlob = await imageData.blob();
+  const imgUrl = URL.createObjectURL(imgBlob);
+  const imgAnchor = document.createElement("a");
+  imgAnchor.href = imgUrl;
+  imgAnchor.download = fileName;
+  imgAnchor.click();
+  setTimeout(() => imgAnchor.remove(), 500);
+}
