@@ -6,6 +6,7 @@ import {
   popularTvShows,
   popularPeople,
   movieById,
+  movieReviewsById,
 } from "../api/apiCalls";
 
 export function useGlobalSearch() {
@@ -30,4 +31,10 @@ export function useApiConfiguration() {
 
 export function useMovieById(movieId) {
   return useQuery(`movie-${movieId}`, () => movieById(movieId));
+}
+
+export function useMovieReviews(movieId, page) {
+  return useQuery(["movie_reviews", movieId, page], () =>
+    movieReviewsById(movieId, page)
+  );
 }

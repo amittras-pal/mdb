@@ -2,9 +2,12 @@
 @import "./vendors";
 
 @media (min-width: 768px) {
-  .isx-modal .modal-content .modal-body {
-    max-height: 72vh;
-    overflow-y: auto;
+  .isx-modal .modal-content {
+    border: 1px solid $muted;
+    .modal-body {
+      max-height: 72vh;
+      overflow-y: auto;
+    }
   }
 }
 
@@ -57,12 +60,21 @@ body {
 
 .isx-modal .modal-content {
   background-color: $dark;
-  border: 1px solid $muted;
+
   .modal-header {
     border-color: $muted;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .modal-title {
+      flex: auto;
+    }
   }
-  .modal-title {
-    flex: auto;
+  .modal-footer {
+    border-color: $muted;
+    & > * {
+      margin: 0 !important;
+    }
   }
 }
 .isx-modal-window {

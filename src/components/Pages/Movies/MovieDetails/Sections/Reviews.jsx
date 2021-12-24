@@ -7,10 +7,10 @@ import {
   BASE_REVIEW_COUNT,
   NO_REVIEW_MSG,
 } from "../../../../../constants/appConstants";
+import ReviewsModal from "../Modals/ReviewsModal/ReviewsModal";
 
 function Reviews({ movie }) {
   const [showAll, setShowAll] = useState(false);
-  console.log(movie.reviews);
   return (
     <>
       <div className="reviews my-3">
@@ -37,14 +37,12 @@ function Reviews({ movie }) {
           )}
         </div>
       </div>
-      <ModalComponent
-        show={showAll}
-        onRequestHide={() => setShowAll(false)}
-        title="Reviews">
-        <p className="fw-bold">{movie.title}</p>
-        {movie.reviews.results.map((review) => (
-          <ReviewCard key={review.id} review={review} />
-        ))}
+      <ModalComponent show={showAll} onRequestHide={() => setShowAll(false)}>
+        <ReviewsModal
+          movieId={movie.id}
+          movieTitle={movie.title}
+          onClose={() => setShowAll(false)}
+        />
       </ModalComponent>
     </>
   );

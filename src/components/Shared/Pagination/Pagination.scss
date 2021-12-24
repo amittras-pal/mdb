@@ -1,0 +1,14 @@
+@import "../../../resources/theme/color";
+
+.isx-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0rem 0.75rem;
+  &__state {
+    text-align: center;
+    flex: 1 1 auto;
+  }
+}
