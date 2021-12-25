@@ -1,3 +1,4 @@
+@import "../../../../../../resources/theme/color";
 .modal-body.image-gallery {
   position: relative;
   width: 100%;
@@ -19,6 +20,7 @@
   height: 70vh;
   display: flex;
   align-items: center;
+  background-color: $black;
 }
 
 .gallery-action-theme {

@@ -16,8 +16,7 @@ function InfoAside({ movie }) {
             target="_blank"
             className="btn btn-sm btn-secondary"
             title="Visit Homepage"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             <FontAwesomeIcon icon={faLink} />
           </a>
         )}
@@ -53,6 +52,19 @@ function InfoAside({ movie }) {
             </p>
           </>
         )}
+        {movie.spoken_languages.length > 0 && (
+          <>
+            <p className="mb-1 fw-bold text-muted">Spoken Languages</p>
+            <p className="small fw-bold">
+              {movie.spoken_languages.map((lan, i, { length }) => (
+                <span className="me-1" key={lan.english_name}>
+                  {lan.english_name}
+                  {length - 1 !== i ? "," : ""}
+                </span>
+              ))}
+            </p>
+          </>
+        )}
         {movie.keywords?.keywords?.length > 0 && (
           <>
             <p className="mb-1 fw-bold text-muted">Keywords</p>
@@ -65,7 +77,6 @@ function InfoAside({ movie }) {
             </div>
           </>
         )}
-        {/* Director, Producer, Writer, Status, Language, Budget, Revenue, Keywords */}
       </div>
     </>
   );
