@@ -8,21 +8,21 @@ ShowSurfer uses the [TMDB](https://www.themoviedb.org/) API for its data source.
 
 ## Dependencies:
 
-`react`: Component based JavaScript UI Library. This application uses all hooks based components.
+- `react`: Component based JavaScript UI Library. This application uses all hooks based components.
 
-`axios`: HTTP client for communicating with the API.
-`react-query`: Fetching, caching, synchronizing server data in the application. Used along side axios to provide a hook-based state management of server-side data.
+- `axios`: HTTP client for communicating with the API.
+- `react-query`: Fetching, caching, synchronizing server data in the application. Used along side axios to provide a hook-based state management of server-side data.
 
-`bootstrap`: CSS Component Library for a responsive and elegant User Interface.
-`react-bootstrap`: React bindings for **bootstrap**, allowing for a simpler implementation of interactive components.
-`react-tippy`: Lightweight react-binding for **tippy.js**, for building interactive popovers and tooltips.
-`fontawesome`: Icons Library.
-`node-sass`: SCSS Preprocessor Library for compiling and bundling SCSS stylesheets.
+- `bootstrap`: CSS Component Library for a responsive and elegant User Interface.
+- `react-bootstrap`: React bindings for **bootstrap**, allowing for a simpler implementation of interactive components.
+- `react-tippy`: Lightweight react-binding for **tippy.js**, for building interactive popovers and tooltips.
+- `fontawesome`: Icons Library.
+- `node-sass`: SCSS Preprocessor Library for compiling and bundling SCSS stylesheets.
 
-`formik`: State Management library for forms used in the application. Validation, Error Handling and submission.
+- `formik`: State Management library for forms used in the application. Validation, Error Handling and submission.
 
-`redux`: Client-side global state management library.
-`react-redux`: React bindings for **Redux**.
+- `redux`: Client-side global state management library.
+- `react-redux`: React bindings for **Redux**.
 
 ## Running Locally.
 
