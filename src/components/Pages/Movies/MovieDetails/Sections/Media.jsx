@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import ModalComponent from "../../../../Shared/Modal/Modal";
-import ImageGallery from "../Modals/ImageGalleryModal/ImageGallery";
+import ImageGallery from "../Modals/GalleryModal/ImageGallery";
+import VideoGallery from "../Modals/GalleryModal/VideoGallery";
 
 function Media({ movie }) {
-  const [mediaView, setMediaView] = useState("backdrop");
+  const [mediaView, setMediaView] = useState("video");
   const [showGallery, setShowGallery] = useState(false);
   const [galleryData, setGalleryData] = useState([]);
 
   const openGallery = () => {
     switch (mediaView) {
       case "video":
+        setGalleryData(
+          movie.videos.results.filter((vid) => vid.site === "YouTube")
+        );
         setShowGallery(true);
-        console.log(movie.videos);
         break;
       case "backdrop":
         setGalleryData(movie.images.backdrops);
@@ -24,6 +27,10 @@ function Media({ movie }) {
       default:
         break;
     }
+  };
+
+  const closeGallery = () => {
+    setShowGallery(false);
   };
 
   return (
@@ -46,18 +53,6 @@ function Media({ movie }) {
             </button>
             <button
               className={
-                mediaView === "backdrop"
-                  ? "media__header__tab active"
-                  : "media__header__tab"
-              }
-              onClick={() => setMediaView("backdrop")}>
-              Backdrops{" "}
-              <span className="text-warning">
-                ({movie.images?.backdrops.length})
-              </span>
-            </button>
-            <button
-              className={
                 mediaView === "poster"
                   ? "media__header__tab active"
                   : "media__header__tab"
@@ -68,9 +63,21 @@ function Media({ movie }) {
                 ({movie.images?.posters.length})
               </span>
             </button>
+            <button
+              className={
+                mediaView === "backdrop"
+                  ? "media__header__tab active"
+                  : "media__header__tab"
+              }
+              onClick={() => setMediaView("backdrop")}>
+              Backdrops{" "}
+              <span className="text-warning">
+                ({movie.images?.backdrops.length})
+              </span>
+            </button>
           </div>
         </div>
-        <div className="media__content p-3">
+        <div className="media__content py-3">
           <button
             className="btn btn-sm btn-primary shadow"
             onClick={openGallery}>
@@ -78,15 +85,21 @@ function Media({ movie }) {
           </button>
         </div>
       </div>
-      <ModalComponent
-        show={showGallery}
-        onRequestHide={() => setShowGallery(false)}>
-        <ImageGallery
-          title={movie.title}
-          imageList={galleryData}
-          galleryType={mediaView}
-          onClose={() => setShowGallery(false)}
-        />
+      <ModalComponent show={showGallery} onRequestHide={closeGallery}>
+        {mediaView === "video" ? (
+          <VideoGallery
+            title={movie.title}
+            videoList={galleryData}
+            onClose={closeGallery}
+          />
+        ) : (
+          <ImageGallery
+            title={movie.title}
+            imageList={galleryData}
+            galleryType={mediaView}
+            onClose={closeGallery}
+          />
+        )}
       </ModalComponent>
     </>
   );

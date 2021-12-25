@@ -1,4 +1,5 @@
 import React from "react";
+import { APP_TITLE } from "../../../constants/appConstants";
 import intro from "../../../resources/images/intro.jpg";
 import { setDocTitle } from "../../../utils/utils";
 import "./Home.scss";
@@ -12,12 +13,11 @@ function Home() {
     <div className="home">
       <div
         className="text-secondary px-3 py-4 hero-section"
-        style={{ backgroundImage: `url(${intro})` }}
-      >
+        style={{ backgroundImage: `url(${intro})` }}>
         <div className="overlay"></div>
         <div className="content">
           <h2 className="fst-italic">
-            Welcome to <span className="fw-bold">IntelliShows.</span>
+            Welcome to <span className="fw-bold">{APP_TITLE}</span>
           </h2>
           <p>
             Millions of movies, TV shows and people to discover.{" "}

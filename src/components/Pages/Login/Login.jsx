@@ -2,6 +2,7 @@ import { Field, FormikProvider, useFormik } from "formik";
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
+import { APP_TITLE } from "../../../constants/appConstants";
 import "./Login.scss";
 
 function Login() {
@@ -23,7 +24,7 @@ function Login() {
       {loginForm.valid}
       <div className="col-md-6 col-lg-6 col-sm-12 pt-5">
         <div className="login-container p-3 border border-primary">
-          <h3>Login to IntelliShows</h3>
+          <h3>Login to {APP_TITLE}</h3>
           <FormikProvider value={loginForm}>
             <form className="mt-4" onSubmit={loginForm.handleSubmit}>
               <Field
@@ -41,19 +42,17 @@ function Login() {
               />
               <div className="d-flex justify-content-between align-items-center">
                 <span className="small">
-                  New to IntelliShows?{" "}
+                  New to {APP_TITLE}?{" "}
                   <Link
                     to="/sign-up"
-                    className="text-warning text-decoration-none"
-                  >
+                    className="text-warning text-decoration-none">
                     Sign Up!
                   </Link>
                 </span>
                 <button
                   type="submit"
                   disabled={!loginForm.isValid}
-                  className="btn btn-sm btn-primary text-secondary fw-bold text-uppercase"
-                >
+                  className="btn btn-sm btn-primary text-secondary fw-bold text-uppercase">
                   Login
                 </button>
               </div>
