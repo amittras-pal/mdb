@@ -53,16 +53,15 @@
       }
     }
   }
-  .cast-block {
-    .cast-crew {
-      width: 100%;
-      display: flex;
-      padding: 0rem 0.25rem;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      gap: 1.25rem;
-      padding-bottom: 1rem;
-    }
+  .cast .cast-scroll,
+  .recommendations .recommendations-scroll {
+    width: 100%;
+    display: flex;
+    padding: 0rem 0.25rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.25rem;
+    padding-bottom: 1rem;
   }
   .media {
     height: 18rem;
@@ -107,27 +106,12 @@
       background-position: center center;
     }
   }
-  .recommendations {
-    width: 100%;
-    display: flex;
-    padding: 0rem 0.25rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 1.25rem;
-    padding-bottom: 1rem;
-  }
-  .right-bar .info {
-    .keywords {
-      display: flex;
-      flex-wrap: wrap;
-      .keyword {
-        padding: 0.125rem 0.4rem;
-        border: 1px solid $secondary;
-        background-color: rgba($color: $secondary, $alpha: 0.1);
-        border-radius: 0.5rem;
-        margin: 0.25rem 0rem;
-        color: $secondary;
-      }
-    }
+  .aside .keyword {
+    padding: 0.125rem 0.4rem;
+    border: 1px solid $secondary;
+    background-color: rgba($color: $secondary, $alpha: 0.1);
+    border-radius: 0.5rem;
+    margin: 0.25rem 0rem;
+    color: $secondary;
   }
 }

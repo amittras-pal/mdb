@@ -11,7 +11,7 @@ import { Tooltip } from "react-tippy";
 import { useApiConfiguration } from "../../../../../../hooks/query.hooks";
 import { createImageUrl, downloadImage } from "../../../../../../utils/utils";
 import Loader from "../../../../../Shared/Loader/Loader";
-import "./ImageGallery.scss";
+import "./Gallery.scss";
 
 function ImageGallery({ imageList = [], galleryType, onClose, title }) {
   const [currentIndex, setCurrentIndex] = useState(0);
