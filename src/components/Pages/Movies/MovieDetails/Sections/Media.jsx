@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import ModalComponent from "../../../../Shared/Modal/Modal";
 import ImageGallery from "../Modals/GalleryModal/ImageGallery";
 import VideoGallery from "../Modals/GalleryModal/VideoGallery";
+import { useApiConfiguration } from "../../../../../hooks/query.hooks";
+import { createImageUrl } from "../../../../../utils/utils";
 
 function Media({ movie }) {
   const [mediaView, setMediaView] = useState("video");
   const [showGallery, setShowGallery] = useState(false);
   const [galleryData, setGalleryData] = useState([]);
+
+  const { data: config } = useApiConfiguration();
 
   const openGallery = () => {
     switch (mediaView) {
@@ -77,9 +81,18 @@ function Media({ movie }) {
             </button>
           </div>
         </div>
-        <div className="media__content py-3">
+        <div
+          className="media__content py-3"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, #201d1d 10%, transparent 90%, #201d1d 100%), url(${createImageUrl(
+              "w780",
+              "backdrop",
+              config,
+              movie.images.backdrops[0].file_path
+            )})`,
+          }}>
           <button
-            className="btn btn-sm btn-primary shadow"
+            className="btn btn-lg btn-primary shadow shadow"
             onClick={openGallery}>
             Open {mediaView} gallery
           </button>

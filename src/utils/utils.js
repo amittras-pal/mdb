@@ -33,7 +33,7 @@ export function createImageUrl(
       break;
   }
   const imgConfig = config?.data?.images;
-  if (!imgConfig[key].includes(size)) return null;
+  if (!imgConfig?.[key]?.includes(size)) return null;
   return imgConfig.secure_base_url + size + imagePath;
 }
 

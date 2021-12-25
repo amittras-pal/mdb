@@ -44,8 +44,7 @@ function Overview({ movie }) {
               </span>
             ))}
             <span className="fst-italic text-warning">
-              (See All{" "}
-              <span className="fw-bold">{movie.credits.crew.length}</span> crew
+              (<span className="fw-bold">{movie.credits.crew.length}</span> crew
               members)
             </span>
           </p>

@@ -36,7 +36,7 @@ function MovieDetails() {
           <Cast movie={movie} />
           <Media movie={movie} />
           <Reviews movie={movie} />
-          <Recommendations />
+          <Recommendations movie={movie} />
         </div>
         <div className="col-md-3 right-bar">
           <InfoAside movie={movie} />
