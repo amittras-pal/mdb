@@ -11,7 +11,7 @@ import Loader from "../../Shared/Loader/Loader";
 import Header from "../../Shared/DetailsPage/Sections/Header";
 import InfoAside from "./Sections/InfoAside";
 import Overview from "./Sections/Overview";
-import Recommendations from "./Sections/Recommendations";
+import Recommendations from "../../Shared/DetailsPage/Sections/Recommendations";
 
 function MovieDetails() {
   const { id: movieId } = useParams();
@@ -30,15 +30,15 @@ function MovieDetails() {
   return (
     <div className="movie-details">
       <Header type="movie" data={movie} />
-      <div className="row m-0 mt-3">
+      <div className="row mx-0 my-3">
         <div className="col-md-9">
           <Overview movie={movie} />
-          <Cast movie={movie} />
-          <Media movie={movie} />
-          <Reviews movie={movie} />
-          <Recommendations movie={movie} />
+          <Cast data={movie} type="movie" />
+          <Media data={movie} type="movie" />
+          <Reviews data={movie} type="movie" />
+          <Recommendations data={movie} type="movie" />
         </div>
-        <div className="col-md-3 right-bar">
+        <div className="col-md-3">
           <InfoAside movie={movie} />
         </div>
       </div>

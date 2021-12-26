@@ -1,5 +1,19 @@
 @import "../../../resources/theme/color";
 
+@media (max-width: 768px) {
+  .movie-details,
+  .show-details {
+    .content {
+      background-image: linear-gradient(
+        to top,
+        $dark,
+        transparent,
+        $dark
+      ) !important;
+    }
+  }
+}
+
 .movie-details,
 .show-details {
   .header {
@@ -101,13 +115,34 @@
       background-position: center center;
     }
   }
-  .aside .keyword {
-    padding: 0.125rem 0.4rem;
-    border: 1px solid $secondary;
-    background-color: rgba($color: $secondary, $alpha: 0.1);
-    border-radius: 0.5rem;
-    margin: 0.25rem 0rem;
-    color: $secondary;
+  .aside {
+    .prod-companies .list-group-item {
+      border-color: $muted !important;
+      padding-left: 0rem !important;
+    }
+    .networks {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      .logo img {
+        width: 100%;
+        padding: 1rem;
+        background-color: $secondary;
+        border-radius: 0.5rem;
+      }
+    }
+    .keywords,
+    .networks {
+      margin-bottom: 1rem;
+      .keyword {
+        padding: 0.125rem 0.4rem;
+        border: 1px solid $secondary;
+        background-color: rgba($color: $secondary, $alpha: 0.1);
+        border-radius: 0.5rem;
+        margin: 0.25rem 0rem;
+        color: $secondary;
+      }
+    }
   }
 }
 

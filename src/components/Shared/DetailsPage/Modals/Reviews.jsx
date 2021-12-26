@@ -1,12 +1,12 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { useMovieReviews } from "../../../../hooks/query.hooks";
-import Pagination from "../../Pagination/Pagination";
+import { useReviews } from "../../../../hooks/query.hooks";
 import Loader from "../../Loader/Loader";
+import Pagination from "../../Pagination/Pagination";
 import ReviewCard from "../../Review/ReviewCard";
 
-function ReviewsModal({ movieId, movieTitle, onClose }) {
+function ReviewsModal({ id, type, title, onClose }) {
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState({
     totalPages: 1,
@@ -14,7 +14,7 @@ function ReviewsModal({ movieId, movieTitle, onClose }) {
     currentPage: 1,
   });
 
-  const { data: reviews, isLoading } = useMovieReviews(movieId, page);
+  const { data: reviews, isLoading } = useReviews(id, type, page);
 
   useEffect(() => {
     if (reviews)
@@ -30,7 +30,7 @@ function ReviewsModal({ movieId, movieTitle, onClose }) {
       <div className="modal-header">
         <div className="modal-title">
           <p className="mb-0 small fw-bold">REVIEWS</p>
-          <p className="mb-0 small">{movieTitle}</p>
+          <p className="mb-0 small">{title}</p>
         </div>
 
         <button className="btn btn-sm text-primary d-md-none" onClick={onClose}>

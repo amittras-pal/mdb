@@ -5,7 +5,7 @@ import VideoGallery from "../Modals/VideoGallery";
 import { useApiConfiguration } from "../../../../hooks/query.hooks";
 import { createImageUrl } from "../../../../utils/utils";
 
-function Media({ movie }) {
+function Media({ data, type }) {
   const [mediaView, setMediaView] = useState("video");
   const [showGallery, setShowGallery] = useState(false);
   const [galleryData, setGalleryData] = useState([]);
@@ -16,16 +16,16 @@ function Media({ movie }) {
     switch (mediaView) {
       case "video":
         setGalleryData(
-          movie.videos.results.filter((vid) => vid.site === "YouTube")
+          data.videos.results.filter((vid) => vid.site === "YouTube")
         );
         setShowGallery(true);
         break;
       case "backdrop":
-        setGalleryData(movie.images.backdrops);
+        setGalleryData(data.images.backdrops);
         setShowGallery(true);
         break;
       case "poster":
-        setGalleryData(movie.images.posters);
+        setGalleryData(data.images.posters);
         setShowGallery(true);
         break;
       default:
@@ -39,7 +39,7 @@ function Media({ movie }) {
 
   return (
     <>
-      <div className="media my-3">
+      <div className="media mb-3">
         <div className="media__header">
           <span className="mb-0 fw-bold text-primary me-3">Media</span>
           <div className="tabs">
@@ -52,7 +52,7 @@ function Media({ movie }) {
               onClick={() => setMediaView("video")}>
               Videos{" "}
               <span className="text-warning">
-                ({movie.videos?.results.length})
+                ({data.videos?.results.length})
               </span>
             </button>
             <button
@@ -64,7 +64,7 @@ function Media({ movie }) {
               onClick={() => setMediaView("poster")}>
               Posters{" "}
               <span className="text-warning">
-                ({movie.images?.posters.length})
+                ({data.images?.posters.length})
               </span>
             </button>
             <button
@@ -76,7 +76,7 @@ function Media({ movie }) {
               onClick={() => setMediaView("backdrop")}>
               Backdrops{" "}
               <span className="text-warning">
-                ({movie.images?.backdrops.length})
+                ({data.images?.backdrops.length})
               </span>
             </button>
           </div>
@@ -84,11 +84,11 @@ function Media({ movie }) {
         <div
           className="media__content py-3"
           style={{
-            backgroundImage: `linear-gradient(to bottom, #201d1d 10%, transparent 90%, #201d1d 100%), url(${createImageUrl(
+            backgroundImage: `linear-gradient(to bottom, #201d1d 0%, transparent, #201d1d 100%), url(${createImageUrl(
               "w780",
               "backdrop",
               config,
-              movie.images.backdrops[0].file_path
+              data.images.backdrops[0].file_path
             )})`,
           }}>
           <button
@@ -101,13 +101,13 @@ function Media({ movie }) {
       <ModalComponent show={showGallery} onRequestHide={closeGallery}>
         {mediaView === "video" ? (
           <VideoGallery
-            title={movie.title}
+            title={type === "movie" ? data.title : data.name}
             videoList={galleryData}
             onClose={closeGallery}
           />
         ) : (
           <ImageGallery
-            title={movie.title}
+            title={type === "movie" ? data.title : data.name}
             imageList={galleryData}
             galleryType={mediaView}
             onClose={closeGallery}
