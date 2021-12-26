@@ -44,7 +44,7 @@ function InfoAside({ show }) {
           <p className="mb-1 fw-bold text-muted">Network </p>
           <div className="networks small fw-bold d-flex flex-wrap">
             {show.networks.map((network) => (
-              <div className="logo">
+              <div className="logo" key={network.id}>
                 <Image
                   imageType="logo"
                   size="w92"
@@ -72,7 +72,9 @@ function InfoAside({ show }) {
           <p className="mb-1 fw-bold text-muted">Production Companies</p>
           <div className="list-group list-group-flush bg-dark prod-companies">
             {show.production_companies.map((company) => (
-              <div className="list-group-item small bg-dark text-secondary">
+              <div
+                className="list-group-item small bg-dark text-secondary"
+                key={company.id}>
                 {company.name}
               </div>
             ))}
