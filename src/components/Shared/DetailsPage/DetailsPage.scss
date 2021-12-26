@@ -147,18 +147,33 @@
 }
 
 .modal-body.image-gallery {
-  position: relative;
-  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  .gallery-action {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+  overflow: hidden;
+  .carousel {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: $secondary;
+    flex-shrink: 0;
+    &:disabled svg {
+      opacity: 0.3;
+    }
+    &--left {
+      background-image: linear-gradient(to right, $dark, transparent);
+    }
+    &--right {
+      background-image: linear-gradient(to left, $dark, transparent);
+    }
   }
 }
 

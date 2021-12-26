@@ -62,19 +62,25 @@ function ImageGallery({ imageList, galleryType, onClose, title }) {
         </button>
       </div>
       <div
-        className="modal-body p-3 image-gallery"
+        className="modal-body p-0 image-gallery"
         style={{
           backgroundImage: loadedImage,
         }}>
-        {!loadedImage && <Loader />}
-      </div>
-      <div className="modal-footer d-flex justify-content-between align-items-center">
         <button
-          className="btn btn-sm text-secondary shaadow"
           disabled={currentIndex === 0}
+          className="carousel carousel--left"
           onClick={() => setCurrentIndex(currentIndex - 1)}>
-          <FontAwesomeIcon icon={faChevronLeft} />
+          <FontAwesomeIcon icon={faChevronLeft} size="2x" />
         </button>
+        {!loadedImage && <Loader />}
+        <button
+          disabled={currentIndex === imageList?.length - 1}
+          className="carousel carousel--right"
+          onClick={() => setCurrentIndex(currentIndex + 1)}>
+          <FontAwesomeIcon icon={faChevronRight} size="2x" />
+        </button>
+      </div>
+      <div className="modal-footer d-flex justify-content-center align-items-center">
         <button
           className="btn btn-sm text-secondary shaadow"
           onClick={download}
@@ -82,8 +88,9 @@ function ImageGallery({ imageList, galleryType, onClose, title }) {
           <FontAwesomeIcon icon={faCloudDownloadAlt} />
         </button>
         <p className="mb-0 small fw-bold">
-          {currentIndex + 1} <span className="text-muted">of</span>{" "}
-          {imageList?.length}
+          <span className="ms-5">{currentIndex + 1}</span>{" "}
+          <span className="text-muted">of</span>{" "}
+          <span className="me-5">{imageList?.length}</span>
         </p>
         <Tooltip
           trigger="click"
@@ -108,12 +115,6 @@ function ImageGallery({ imageList, galleryType, onClose, title }) {
             <FontAwesomeIcon icon={faInfoCircle} />
           </button>
         </Tooltip>
-        <button
-          className="btn btn-sm text-secondary shaadow"
-          disabled={currentIndex === imageList?.length - 1}
-          onClick={() => setCurrentIndex(currentIndex + 1)}>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
       </div>
     </>
   );
