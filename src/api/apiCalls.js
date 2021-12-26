@@ -35,19 +35,24 @@ export function movieById(movieId) {
   });
 }
 
-export function movieReviewsById(movieId, page) {
-  return axios.get(`${ENDPOINTS.movieById}/${movieId}/reviews`, {
-    params: {
-      page,
-    },
-  });
-}
-
 export function showById(showId) {
   return axios.get(ENDPOINTS.showById + showId, {
     params: {
       append_to_response:
-        "videos,images,reviews,credits,recommendations,keywords,latest,episodes,seasons",
+        "videos,images,reviews,credits,recommendations,keywords,latest,seasons",
     },
   });
+}
+
+export function getReviews(id, type, page) {
+  return axios.get(
+    `${
+      type === "movie" ? ENDPOINTS.movieById : ENDPOINTS.showById
+    }/${id}/reviews`,
+    {
+      params: {
+        page,
+      },
+    }
+  );
 }

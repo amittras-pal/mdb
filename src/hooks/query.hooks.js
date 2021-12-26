@@ -6,8 +6,8 @@ import {
   popularTvShows,
   popularPeople,
   movieById,
-  movieReviewsById,
   showById,
+  getReviews,
 } from "../api/apiCalls";
 
 export function useGlobalSearch() {
@@ -34,12 +34,12 @@ export function useMovieById(movieId) {
   return useQuery(`movie-${movieId}`, () => movieById(movieId));
 }
 
-export function useMovieReviews(movieId, page) {
-  return useQuery(["movie_reviews", movieId, page], () =>
-    movieReviewsById(movieId, page)
-  );
-}
-
 export function useShowById(showId) {
   return useQuery(["show", showId], () => showById(showId));
+}
+
+export function useReviews(id, type, page) {
+  return useQuery([`${type}-reviews`, id, page], () =>
+    getReviews(id, type, page)
+  );
 }
