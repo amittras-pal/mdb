@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import ModalComponent from "../../../../Shared/Modal/Modal";
-import ReviewCard from "../../../../Shared/Review/ReviewCard";
+import ModalComponent from "../../Modal/Modal";
+import ReviewCard from "../../Review/ReviewCard";
 import {
   BASE_REVIEW_COUNT,
   NO_REVIEW_MSG,
-} from "../../../../../constants/appConstants";
-import ReviewsModal from "../Modals/ReviewsModal/ReviewsModal";
+} from "../../../../constants/appConstants";
+import ReviewsModal from "../Modals/Reviews";
 
 function Reviews({ movie }) {
   const [showAll, setShowAll] = useState(false);

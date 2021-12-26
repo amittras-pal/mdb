@@ -1,5 +1,5 @@
 import React from "react";
-import MediaTile from "../../../../Shared/MediaTile/MediaTile";
+import MediaTile from "../../../Shared/MediaTile/MediaTile";
 
 function Recommendations({ movie }) {
   return (

@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import "./Gallery.scss";
+import "../DetailsPage.scss";
 
 function VideoGallery({ videoList, title, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(0);

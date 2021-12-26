@@ -7,6 +7,7 @@ import {
   popularPeople,
   movieById,
   movieReviewsById,
+  showById,
 } from "../api/apiCalls";
 
 export function useGlobalSearch() {
@@ -37,4 +38,8 @@ export function useMovieReviews(movieId, page) {
   return useQuery(["movie_reviews", movieId, page], () =>
     movieReviewsById(movieId, page)
   );
+}
+
+export function useShowById(showId) {
+  return useQuery(["show", showId], () => showById(showId));
 }

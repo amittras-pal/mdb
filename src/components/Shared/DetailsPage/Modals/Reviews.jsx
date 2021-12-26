@@ -1,10 +1,10 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { useMovieReviews } from "../../../../../../hooks/query.hooks";
-import Pagination from "../../../../../Shared/Pagination/Pagination";
-import Loader from "../../../../../Shared/Loader/Loader";
-import ReviewCard from "../../../../../Shared/Review/ReviewCard";
+import { useMovieReviews } from "../../../../hooks/query.hooks";
+import Pagination from "../../Pagination/Pagination";
+import Loader from "../../Loader/Loader";
+import ReviewCard from "../../Review/ReviewCard";
 
 function ReviewsModal({ movieId, movieTitle, onClose }) {
   const [page, setPage] = useState(1);

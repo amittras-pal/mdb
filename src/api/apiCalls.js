@@ -42,3 +42,12 @@ export function movieReviewsById(movieId, page) {
     },
   });
 }
+
+export function showById(showId) {
+  return axios.get(ENDPOINTS.showById + showId, {
+    params: {
+      append_to_response:
+        "videos,images,reviews,credits,recommendations,keywords,latest,episodes,seasons",
+    },
+  });
+}

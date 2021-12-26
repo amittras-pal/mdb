@@ -8,10 +8,10 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Tooltip } from "react-tippy";
-import { useApiConfiguration } from "../../../../../../hooks/query.hooks";
-import { createImageUrl, downloadImage } from "../../../../../../utils/utils";
-import Loader from "../../../../../Shared/Loader/Loader";
-import "./Gallery.scss";
+import { useApiConfiguration } from "../../../../hooks/query.hooks";
+import { createImageUrl, downloadImage } from "../../../../utils/utils";
+import Loader from "../../Loader/Loader";
+import "../DetailsPage.scss";
 
 function ImageGallery({ imageList = [], galleryType, onClose, title }) {
   const [currentIndex, setCurrentIndex] = useState(0);

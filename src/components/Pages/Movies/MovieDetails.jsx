@@ -1,17 +1,17 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useMovieById } from "../../../../hooks/query.hooks";
-import { setDocTitle } from "../../../../utils/utils";
-import AttributionFooter from "../../../Shared/AttributionFooter/AttributionFooter";
-import Loader from "../../../Shared/Loader/Loader";
-import "./MovieDetails.scss";
-import Cast from "./Sections/Cast";
-import Header from "./Sections/Header";
+import { useMovieById } from "../../../hooks/query.hooks";
+import { setDocTitle } from "../../../utils/utils";
+import AttributionFooter from "../../Shared/AttributionFooter/AttributionFooter";
+import "../../Shared/DetailsPage/DetailsPage.scss";
+import Cast from "../../Shared/DetailsPage/Sections/Cast";
+import Media from "../../Shared/DetailsPage/Sections/Media";
+import Reviews from "../../Shared/DetailsPage/Sections/Reviews";
+import Loader from "../../Shared/Loader/Loader";
+import Header from "../../Shared/DetailsPage/Sections/Header";
 import InfoAside from "./Sections/InfoAside";
-import Media from "./Sections/Media";
 import Overview from "./Sections/Overview";
 import Recommendations from "./Sections/Recommendations";
-import Reviews from "./Sections/Reviews";
 
 function MovieDetails() {
   const { id: movieId } = useParams();
@@ -29,7 +29,7 @@ function MovieDetails() {
 
   return (
     <div className="movie-details">
-      <Header movie={movie} />
+      <Header type="movie" data={movie} />
       <div className="row m-0 mt-3">
         <div className="col-md-9">
           <Overview movie={movie} />

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ModalComponent from "../../../../Shared/Modal/Modal";
-import ImageGallery from "../Modals/GalleryModal/ImageGallery";
-import VideoGallery from "../Modals/GalleryModal/VideoGallery";
-import { useApiConfiguration } from "../../../../../hooks/query.hooks";
-import { createImageUrl } from "../../../../../utils/utils";
+import ModalComponent from "../../Modal/Modal";
+import ImageGallery from "../Modals/ImageGallery";
+import VideoGallery from "../Modals/VideoGallery";
+import { useApiConfiguration } from "../../../../hooks/query.hooks";
+import { createImageUrl } from "../../../../utils/utils";
 
 function Media({ movie }) {
   const [mediaView, setMediaView] = useState("video");
