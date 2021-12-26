@@ -1,16 +1,32 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import ModalComponent from "../../Modal/Modal";
-import ReviewCard from "../../Review/ReviewCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   BASE_REVIEW_COUNT,
   NO_REVIEW_MSG,
 } from "../../../../constants/appConstants";
+import { setDocTitle } from "../../../../utils/utils";
+import ModalComponent from "../../Modal/Modal";
+import ReviewCard from "../../Review/ReviewCard";
 import ReviewsModal from "../Modals/Reviews";
 
 function Reviews({ data, type }) {
-  const [showAll, setShowAll] = useState(false);
+  const titleString = type === "movie" ? data.title : data.name;
+
+  const [modalParams, setModalParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const openAllReviews = () => {
+    setModalParams({ reviews: true });
+    setDocTitle(`${type.toUpperCase()} ${titleString} - reviews`);
+  };
+
+  const closeAllReviews = () => {
+    navigate(-1);
+    setDocTitle(`${type.toUpperCase()} ${titleString}`);
+  };
+
   return (
     <>
       <div className="reviews mb-3">
@@ -19,7 +35,7 @@ function Reviews({ data, type }) {
           {data.reviews.total_results > BASE_REVIEW_COUNT && (
             <button
               className="btn btn-sm text-warning"
-              onClick={() => setShowAll(true)}>
+              onClick={openAllReviews}>
               <span className="me-2">See All {data.reviews.total_results}</span>
               <FontAwesomeIcon icon={faChevronRight} />
             </button>
@@ -31,18 +47,18 @@ function Reviews({ data, type }) {
               .slice(0, BASE_REVIEW_COUNT)
               .map((review) => <ReviewCard key={review.id} review={review} />)
           ) : (
-            <p className="mb-0 small">
-              {NO_REVIEW_MSG + (type === "movie" ? data.title : data.name)}.
-            </p>
+            <p className="mb-0 small">{NO_REVIEW_MSG + titleString}.</p>
           )}
         </div>
       </div>
-      <ModalComponent show={showAll} onRequestHide={() => setShowAll(false)}>
+      <ModalComponent
+        show={modalParams.get("reviews") ? true : false}
+        onRequestHide={closeAllReviews}>
         <ReviewsModal
           id={data.id}
-          title={type === "movie" ? data.title : data.name}
+          title={titleString}
           type={type}
-          onClose={() => setShowAll(false)}
+          onClose={closeAllReviews}
         />
       </ModalComponent>
     </>

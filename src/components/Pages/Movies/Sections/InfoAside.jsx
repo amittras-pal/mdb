@@ -79,7 +79,9 @@ function InfoAside({ movie }) {
           <p className="mb-1 fw-bold text-muted">Production Companies</p>
           <div className="list-group list-group-flush bg-dark prod-companies">
             {movie.production_companies.map((company) => (
-              <div className="list-group-item small bg-dark text-secondary">
+              <div
+                className="list-group-item small bg-dark text-secondary"
+                key={company.id}>
                 {company.name}
               </div>
             ))}

@@ -6,7 +6,7 @@ import Loader from "../../Loader/Loader";
 import Pagination from "../../Pagination/Pagination";
 import ReviewCard from "../../Review/ReviewCard";
 
-function ReviewsModal({ id, type, title, onClose }) {
+function Reviews({ id, type, title, onClose }) {
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState({
     totalPages: 1,
@@ -33,7 +33,7 @@ function ReviewsModal({ id, type, title, onClose }) {
           <p className="mb-0 small">{title}</p>
         </div>
 
-        <button className="btn btn-sm text-primary d-md-none" onClick={onClose}>
+        <button className="btn btn-sm text-primary" onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
       </div>
@@ -55,4 +55,4 @@ function ReviewsModal({ id, type, title, onClose }) {
   );
 }
 
-export default ReviewsModal;
+export default Reviews;

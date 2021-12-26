@@ -1,32 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useApiConfiguration } from "../../../../hooks/query.hooks";
+import { createImageUrl, setDocTitle } from "../../../../utils/utils";
 import ModalComponent from "../../Modal/Modal";
 import ImageGallery from "../Modals/ImageGallery";
 import VideoGallery from "../Modals/VideoGallery";
-import { useApiConfiguration } from "../../../../hooks/query.hooks";
-import { createImageUrl } from "../../../../utils/utils";
 
 function Media({ data, type }) {
   const [mediaView, setMediaView] = useState("video");
-  const [showGallery, setShowGallery] = useState(false);
-  const [galleryData, setGalleryData] = useState([]);
+  const [galleryData, setGalleryData] = useState(null);
+
+  const [modalParams, setModalParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const { data: config } = useApiConfiguration();
+
+  const titleString = type === "movie" ? data.title : data.name;
+
+  useEffect(() => {
+    const media = modalParams.get("media");
+    if (media) {
+      setDocTitle(`[${type.toUpperCase()}] ${titleString} - ${media}s`);
+      setMediaView(media);
+      switch (media) {
+        case "video":
+          setGalleryData(
+            data.videos.results.filter((vid) => vid.site === "YouTube")
+          );
+          break;
+        case "backdrop":
+          setGalleryData(data.images.backdrops);
+          break;
+        case "poster":
+          setGalleryData(data.images.posters);
+          break;
+        default:
+          setGalleryData(null);
+          break;
+      }
+    } else {
+      setGalleryData(null);
+    }
+  }, [modalParams, data, titleString, type]);
 
   const openGallery = () => {
     switch (mediaView) {
       case "video":
-        setGalleryData(
-          data.videos.results.filter((vid) => vid.site === "YouTube")
-        );
-        setShowGallery(true);
+        setModalParams({ media: "video" });
         break;
       case "backdrop":
-        setGalleryData(data.images.backdrops);
-        setShowGallery(true);
+        setModalParams({ media: "backdrop" });
         break;
       case "poster":
-        setGalleryData(data.images.posters);
-        setShowGallery(true);
+        setModalParams({ media: "poster" });
         break;
       default:
         break;
@@ -34,7 +60,9 @@ function Media({ data, type }) {
   };
 
   const closeGallery = () => {
-    setShowGallery(false);
+    setGalleryData(null);
+    navigate(-1);
+    setDocTitle(`[${type.toUpperCase()}] ${titleString}`);
   };
 
   return (
@@ -98,16 +126,18 @@ function Media({ data, type }) {
           </button>
         </div>
       </div>
-      <ModalComponent show={showGallery} onRequestHide={closeGallery}>
+      <ModalComponent
+        show={galleryData ? true : false}
+        onRequestHide={closeGallery}>
         {mediaView === "video" ? (
           <VideoGallery
-            title={type === "movie" ? data.title : data.name}
+            title={titleString}
             videoList={galleryData}
             onClose={closeGallery}
           />
         ) : (
           <ImageGallery
-            title={type === "movie" ? data.title : data.name}
+            title={titleString}
             imageList={galleryData}
             galleryType={mediaView}
             onClose={closeGallery}

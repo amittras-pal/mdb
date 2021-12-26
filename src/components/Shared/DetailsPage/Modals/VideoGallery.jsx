@@ -5,10 +5,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import YouTube from "react-youtube";
 import "../DetailsPage.scss";
 
 function VideoGallery({ videoList, title, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   return (
     <>
       <div className="modal-header">
@@ -16,19 +18,15 @@ function VideoGallery({ videoList, title, onClose }) {
           <p className="mb-0 small fw-bold">VIDEOS</p>
           <p className="mb-0 small">{title}</p>
         </div>
-        <button className="btn btn-sm text-primary d-md-none" onClick={onClose}>
+        <button className="btn btn-sm text-primary" onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
       </div>
       <div className="modal-body p-0 video-gallery">
-        <iframe
-          width="100%"
-          height="70%"
-          src={`https://www.youtube.com/embed/${videoList[currentIndex].key}`}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
+        <YouTube
+          videoId={videoList?.[currentIndex].key}
+          containerClassName="video-frame-container"
+          opts={{ height: "100%", width: "100%" }}
         />
       </div>
       <div className="modal-footer d-flex justify-content-between align-items-center">
@@ -40,11 +38,11 @@ function VideoGallery({ videoList, title, onClose }) {
         </button>
         <p className="mb-0 small fw-bold">
           {currentIndex + 1} <span className="text-muted">of</span>{" "}
-          {videoList.length}
+          {videoList?.length}
         </p>
         <button
           className="btn btn-sm text-secondary shaadow"
-          disabled={currentIndex === videoList.length - 1}
+          disabled={currentIndex === videoList?.length - 1}
           onClick={() => setCurrentIndex(currentIndex + 1)}>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>

@@ -1,16 +1,6 @@
 @import "./color";
 @import "./vendors";
 
-@media (min-width: 768px) {
-  .isx-modal .modal-content {
-    border: 1px solid $muted;
-    .modal-body {
-      max-height: 72vh;
-      overflow-y: auto;
-    }
-  }
-}
-
 html,
 body {
   font-family: "Montserrat", sans-serif;

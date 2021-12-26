@@ -13,7 +13,7 @@ import { createImageUrl, downloadImage } from "../../../../utils/utils";
 import Loader from "../../Loader/Loader";
 import "../DetailsPage.scss";
 
-function ImageGallery({ imageList = [], galleryType, onClose, title }) {
+function ImageGallery({ imageList, galleryType, onClose, title }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadedImage, setLoadedImage] = useState(null);
 
@@ -25,14 +25,16 @@ function ImageGallery({ imageList = [], galleryType, onClose, title }) {
       "original",
       galleryType,
       config,
-      imageList[currentIndex].file_path
+      imageList?.[currentIndex].file_path
     );
-    fetch(imgUrl)
-      .then((data) => data.blob())
-      .then((src) => {
-        const localUrl = URL.createObjectURL(src);
-        setLoadedImage(`url(${localUrl})`);
-      });
+    if (imgUrl) {
+      fetch(imgUrl)
+        .then((data) => data.blob())
+        .then((src) => {
+          const localUrl = URL.createObjectURL(src);
+          setLoadedImage(`url(${localUrl})`);
+        });
+    }
   }, [currentIndex, config, galleryType, imageList]);
 
   const download = () => {
@@ -41,9 +43,9 @@ function ImageGallery({ imageList = [], galleryType, onClose, title }) {
         "original",
         galleryType,
         config,
-        imageList[currentIndex].file_path
+        imageList?.[currentIndex].file_path
       ),
-      imageList[currentIndex].file_path.substr(1)
+      imageList?.[currentIndex].file_path.substr(1)
     );
   };
 
@@ -55,19 +57,14 @@ function ImageGallery({ imageList = [], galleryType, onClose, title }) {
           <p className="mb-0 small">{title}</p>
         </div>
 
-        <button className="btn btn-sm text-primary d-md-none" onClick={onClose}>
+        <button className="btn btn-sm text-primary" onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
       </div>
       <div
         className="modal-body p-3 image-gallery"
         style={{
-          backgroundImage: `url(${createImageUrl(
-            "original",
-            galleryType,
-            config,
-            imageList[currentIndex].file_path
-          )})`,
+          backgroundImage: loadedImage,
         }}>
         {!loadedImage && <Loader />}
       </div>
@@ -86,7 +83,7 @@ function ImageGallery({ imageList = [], galleryType, onClose, title }) {
         </button>
         <p className="mb-0 small fw-bold">
           {currentIndex + 1} <span className="text-muted">of</span>{" "}
-          {imageList.length}
+          {imageList?.length}
         </p>
         <Tooltip
           trigger="click"
@@ -99,10 +96,12 @@ function ImageGallery({ imageList = [], galleryType, onClose, title }) {
             <p className="text-dark small mb-2">
               <span className="text-primary">Size: </span>
               <span className="fw-bold">
-                {imageList[currentIndex].width}
+                {imageList?.[currentIndex].width}
               </span>{" "}
               <span className="text-muted">by</span>{" "}
-              <span className="fw-bold">{imageList[currentIndex].height}</span>
+              <span className="fw-bold">
+                {imageList?.[currentIndex].height}
+              </span>
             </p>
           }>
           <button className="btn btn-sm text-secondary shaadow">
@@ -111,7 +110,7 @@ function ImageGallery({ imageList = [], galleryType, onClose, title }) {
         </Tooltip>
         <button
           className="btn btn-sm text-secondary shaadow"
-          disabled={currentIndex === imageList.length - 1}
+          disabled={currentIndex === imageList?.length - 1}
           onClick={() => setCurrentIndex(currentIndex + 1)}>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
