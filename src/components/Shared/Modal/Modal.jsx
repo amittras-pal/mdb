@@ -6,7 +6,7 @@ function ModalComponent({ show, onRequestHide, children }) {
     <Modal
       size="lg"
       centered
-      fullscreen="md-down"
+      fullscreen
       className="isx-modal-window"
       dialogClassName="isx-modal"
       show={show}
