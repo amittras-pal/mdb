@@ -8,6 +8,10 @@ function Overview({ movie }) {
 
   return (
     <div className="overview mb-3">
+      <div className="d-md-none mb-3">
+        <p className="h2 fw-normal">{movie.title}</p>
+        <p className="h5 fw-normal fst-italic small">{movie.tagline}</p>
+      </div>
       <p className="text-primary fw-bold mb-3">Overview </p>
       <div className="overview-content">
         <p>{movie.overview}</p>

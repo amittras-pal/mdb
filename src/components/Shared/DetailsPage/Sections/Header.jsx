@@ -9,9 +9,10 @@ function Header({ type, data }) {
       className="header"
       style={{
         backgroundImage: `url(${configData?.data.images.secure_base_url}original${data.backdrop_path})`,
-      }}>
+      }}
+    >
       <div className="overlay"></div>
-      <div className="content align-items-md-end">
+      <div className="content align-items-end">
         <div className="poster">
           <img
             src={`${configData?.data.images.secure_base_url}w342${data.poster_path}`}
@@ -19,19 +20,15 @@ function Header({ type, data }) {
           />
         </div>
         <div className="title-area">
-          <div className="title">
-            <p className="h3 text-secondary">
-              {type === "movie" ? data.title : data.name}
-            </p>
-            <p className="h5 fw-normal text-secondary fst-italic small">
-              {data.tagline}
-            </p>
+          <div className="title d-none d-md-block">
+            <p className="h3">{type === "movie" ? data.title : data.name}</p>
+            <p className="h5 fw-normal fst-italic small">{data.tagline}</p>
           </div>
 
           <Tooltip
             trigger="click"
             position="top"
-            className="rating pointer"
+            className="rating pointer ms-auto"
             theme="light"
             arrow={true}
             html={
@@ -39,7 +36,8 @@ function Header({ type, data }) {
                 Based on <span className="fw-bold">{data.vote_count}</span>{" "}
                 votes!
               </p>
-            }>
+            }
+          >
             <span className="text-secondary mb-0 small fw-bold">
               {data.vote_average}
             </span>
