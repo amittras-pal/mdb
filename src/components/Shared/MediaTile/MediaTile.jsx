@@ -5,7 +5,7 @@ import Image from "../Image/Image";
 import "./MediaTile.scss";
 
 function MediaTile({ type, data }) {
-  const route = `/${type === "movie" ? "movies" : "tv"}/view/${data.id}`;
+  const route = `/${type === "movie" ? "movie" : "tv"}/view/${data.id}`;
 
   return (
     <div className="media-tile">

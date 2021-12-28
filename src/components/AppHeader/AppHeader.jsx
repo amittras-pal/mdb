@@ -1,9 +1,9 @@
 import { faBars, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Tooltip } from "react-tippy";
 import { HEADER_LABEL } from "../../constants/appConstants";
 import { toggleSidebar } from "../../store/actions/sidebar.action";
 import { blurView } from "../../utils/utils";
@@ -34,31 +34,34 @@ function AppHeaderEnhance() {
   };
 
   return (
-    <Tooltip
-      className="app-header"
-      position="bottom-center"
-      arrow={false}
-      open={showSearch}
-      theme="g-search light"
-      interactive
-      html={<SearchPopup onRequestClose={closeSearch} />}>
-      <div className="title">
-        <div className="d-md-none">
-          <button className="btn me-2 text-secondary" onClick={openSidebar}>
-            <FontAwesomeIcon icon={sidebarOpen ? faTimes : faBars} />
-          </button>
+    <>
+      <div className="app-header">
+        <div className="title">
+          <div className="d-md-none">
+            <button className="btn me-2 text-secondary" onClick={openSidebar}>
+              <FontAwesomeIcon icon={sidebarOpen ? faTimes : faBars} />
+            </button>
+          </div>
+          <Link to="/" className="h4 m-0 fst-italic text-decoration-none">
+            <span className="text-secondary">{HEADER_LABEL[0]}</span>
+            <span className="text-primary">{HEADER_LABEL[1]}</span>
+            <span className="text-warning">{HEADER_LABEL[2]}</span>
+          </Link>
         </div>
-        <Link to="/" className="h4 m-0 fst-italic text-decoration-none">
-          <span className="text-secondary">{HEADER_LABEL[0]}</span>
-          <span className="text-primary">{HEADER_LABEL[1]}</span>
-          <span className="text-warning">{HEADER_LABEL[2]}</span>
-        </Link>
+        <button className="btn btn-primary btn-sm" onClick={openSearch}>
+          <FontAwesomeIcon icon={faSearch} className="me-2" />
+          <span>Search</span>
+        </button>
       </div>
-      <button className="btn btn-primary btn-sm" onClick={openSearch}>
-        <FontAwesomeIcon icon={faSearch} className="me-2" />
-        <span>Search</span>
-      </button>
-    </Tooltip>
+      <Modal
+        size="md"
+        show={showSearch}
+        onHide={closeSearch}
+        className="isx-modal-window"
+        dialogClassName="isx-modal">
+        <SearchPopup onRequestClose={closeSearch} />
+      </Modal>
+    </>
   );
 }
 

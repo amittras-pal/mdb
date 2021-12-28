@@ -14,8 +14,8 @@ function RouterOutlet() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/movies" element={<Movies />} />
-      <Route path="/movies/view/:id" element={<MovieDetails />} />
+      <Route path="/movie" element={<Movies />} />
+      <Route path="/movie/view/:id" element={<MovieDetails />} />
       <Route path="/tv" element={<Shows />} />
       <Route path="/tv/view/:id" element={<ShowDetails />} />
       <Route
